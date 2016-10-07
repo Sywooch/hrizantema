@@ -26,7 +26,7 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -38,6 +38,22 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'assetManager' => [
+            'converter' => [
+              'class' => 'yii\web\AssetConverter',
+              'commands' => [
+                 'less' => ['css', 'lessc {from} > {to} --no-color'],
+
+              ],
+             ],     
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'sourcePath' => '@app/mybootstrap/dist/css',
+ 
+                    'css' => ['bootstrap.css'],
+                ],
+            ],
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
