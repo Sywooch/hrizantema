@@ -23,14 +23,22 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+<div class="container">
 
+    <div class='row'>    
+        <div class='col-lg-5  col-md-5 col-sm-5'>
+        <img src='images/head_hrizantema3.png' class='img-responsive'/>
+        </div>
+    </div>
+</div>
 <div class="wrap">
     <?php
+    
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => '',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-inverse ',
         ],
     ]);
     echo Nav::widget([
@@ -56,7 +64,7 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
+  <div class="container">  
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
