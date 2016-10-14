@@ -24,11 +24,11 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email', 'subject', 'body'], 'required','message'=>'Поле должно быть заполнено'],
             // email has to be a valid email address
-            ['email', 'email'],
+            ['email', 'email', 'message' => 'Неправильно введен e-mail'],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            ['verifyCode', 'captcha','message'=>'Код с картинки введен неправильно'],
         ];
     }
 
@@ -38,7 +38,7 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            'verifyCode' => 'Введите символы с картинки',
         ];
     }
 

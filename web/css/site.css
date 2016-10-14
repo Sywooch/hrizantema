@@ -10,8 +10,14 @@ body {
     padding: 0 0 60px;
 }
 
+.vcenter {
+  display: inline-block;
+  float: none;
+  vertical-align: middle;
+}
+
 .wrap > .container {
-    padding: 70px 15px 20px;
+    padding: 0px 15px 20px;
 }
 
 .footer {
@@ -89,3 +95,5 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+
