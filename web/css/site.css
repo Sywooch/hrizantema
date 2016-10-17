@@ -16,8 +16,30 @@ body {
   vertical-align: middle;
 }
 
+.navbar-brand {
+  
+}
+
+
+.affix {
+    width:100%;
+    z-index:100000;
+    position: fixed;
+    top: 0;
+}
+
+.container {
+    width:100%;
+}
+
+
+
 .wrap > .container {
-    padding: 0px 15px 20px;
+    
+}
+
+nav.affix {
+
 }
 
 .footer {
@@ -96,4 +118,9 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
-
+h3.hilight {
+    border-left:10px #337ab7 solid;
+    text-indent:5px;
+    margin-left:-15px;
+    padding-top:4px;
+}

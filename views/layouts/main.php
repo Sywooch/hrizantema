@@ -23,38 +23,71 @@ AppAsset::register($this);
 
     <?php $this->head() ?>
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 <?php $this->beginBody() ?>
-<div class="container" >
 
-    <div class='row'>  
-        <div class='col-lg-2  col-md-2 col-sm-2 col-xs-2 '> 
-        </div>
-        <div class='col-lg-5  col-md-5 col-sm-5 col-xs-10 '>
-            <?= Html::a("<img src='".Yii::$app->request->baseUrl." /images/head_hrizantema3.png' class='img-responsive'/>",Url::to(['site/index']))?>
-        </div><!--
-     --><div class='col-lg-5  col-md-5 col-sm-5 col-xs-12 text-center vcenter'><!--
-        --><?=Html::a("<div class=\"vcenter\"><span style=\"font-size:18pt\" class=\"glyphicon glyphicon-map-marker text-info\"></span></div><strong> г. Белгород, ул. Горького, д. 76</strong><br/>",Url::to(['site/contact','#'=>'map']))?><!-- 
-        --><div class='vcenter'><span style='font-size:18pt' class="glyphicon glyphicon-phone-alt text-info"></span></div> <strong>+7 (4722) 72-00-75</strong><br/><!--
-        --><?=Html::a("<div class=\"vcenter\"><span style=\"font-size:18pt\" class=\"glyphicon glyphicon-envelope text-info\"></span></div> <strong>trav.oks@yandex.ru</strong>",Url::to(['site/contact','mail'=>'send']))?><!--
-     --></div>
-    </div>
-</div>
 <div class="wrap">
+
     <?php
     
+//    NavBar::begin([
+//        'brandOptions' => ['class' => 'col-lg-2 col-md-2 col-sm-2 col-xs-2'],
+//        'brandLabel' => '<img alt="Brand" src="'.Yii::$app->request->baseUrl."/images/hriz2.png\" class='img-responsive'/>",
+//        'brandUrl' => Yii::$app->homeUrl,
+//        'options' => [
+//            'class' => 'navbar',
+//        ],
+//    ]);
+//echo Nav::widget([
+//        'options' => ['class' => 'navbar-nav navbar-left'],
+//        'items' => [
+//            [
+//                'label' => 'ХРИЗАНТЕМА',
+//                'encode' => false,
+//                'url' => false,
+//                'options' => []
+//                
+//            ],
+//            
+//        ],
+//    ]);
+//    NavBar::end();
+?> 
+       <div class="container">   
+        <div class='row'>
+            <div class='col-lg-1 col-md-1'>
+            </div>
+            
+            <div class='col-lg-2 col-md-2 col-sm-2 col-xs-3 text-center' style='max-width:130px;  padding-top:10px; padding-bottom:10px'>
+                <img alt="Brand" src="<?=Yii::$app->request->baseUrl?>/images/hriz2.png" class='img-responsive'/>
+            </div>
+            <div class='col-lg-5  col-md-6 col-sm-6 col-xs-9 vcenter' ><!--
+            --><h3 style='font-family:verdana;'>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
+Белгородской области</small></h3><!--
+        --></div><!--
+        --><div class='col-lg-3  col-md-3 col-sm-4 col-xs-12 text-center vcenter' style='font-family:vardana;font-size:14pt;'><!--
+            --><div class='vcenter'><span style='font-size:18pt' class="glyphicon glyphicon-phone-alt text-info"></span></div> +7 (4722) 72-00-75<br/><!--
+        --></div>
+       </div>
+           </div>
+
+    <?php    
+
     NavBar::begin([
-        'brandLabel' => '',
+        'brandOptions' => [],
+        'brandLabel' => "",
+
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse ',
+            'class' => 'navbar navbar-default ','data-spy'=>'affix','data-offset-top'=>140
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav col-lg-12','style'=>'float:none'],
         'items' => [
+            ['label' => '','options'=>['class'=>'col-lg-1 col-md-1 col-sm-1']],
             ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'Об организации', 'url' => ['/site/about']],
+            ['label' => 'О нас', 'url' => ['/site/about']],
             ['label' => 'Контакты', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Войти', 'url' => ['/site/login']]
@@ -71,24 +104,28 @@ AppAsset::register($this);
         ],
     ]);
     NavBar::end();
+       
     ?>
 
-  <div class="container">  
+
+
+    <div class='col-lg-offset-1 col-md-offset-1 col-lg-10  col-md-10 col-sm-12 col-xs-12' style="padding-bottom:20px">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             'homeLink'=>['label'=>'Главная','url'=>Url::to(['site/index'])]
         ]) ?>
+      
         <?= $content ?>
-    </div>
+        </div>
 </div>
-
-<footer class="footer">
-    <div class="container">
+<footer class="footer col-sm-12 col-xs-12">
+    <div class="col-lg-offset-1 col-md-offset-1 col-lg-10  col-md-10">
         <p class="pull-left">&copy; ЦПК "Хризантема" <?= date('Y') ?></p>
 
         <p class="pull-right"></p>
     </div>
 </footer>
+    
 
 <?php $this->endBody() ?>
 </body>
