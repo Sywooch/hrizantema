@@ -11,6 +11,8 @@ use yii\captcha\Captcha;
 use yii\bootstrap\Tabs;
 use kartik\tabs\TabsX;
 
+
+$this->title = "Контакты";
 ?>
 
     
@@ -37,7 +39,7 @@ use kartik\tabs\TabsX;
               <?php else: ?>
 
                   <p>
-          Если Вы имеете какие-либо вопросы или предложения, заполните форму обратной связи. Спасибо!
+          Если Вы имеете какие-либо вопросы или предложения, заполните эту форму, и мы ответим в ближайшее время.
                   </p>
                 <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
@@ -71,7 +73,7 @@ use kartik\tabs\TabsX;
 <div style='margin-left:30px; margin-right:30px'>
 
  
- <h3 class="hilight">График работы:</h3> Понедельник - суббота<br/>с 10<sup> 00</sup> до 16<sup> 00</sup>
+ <h3 class="hilight">Режим работы:</h3> Понедельник - суббота<br/>с 10<sup> 00</sup> до 16<sup> 00</sup>
  <h3 class="hilight">Телефоны, e-mail:</h3> <span class="glyphicon glyphicon-phone-alt"></span> +7 (4722) 72-00-75<br/>
  <span class="glyphicon glyphicon-phone"></span> +7-909-202-08-24<br/>
  <span class="glyphicon glyphicon-envelope"></span> trav.oks@yandex.ru

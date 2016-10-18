@@ -8,10 +8,10 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 
-
+$this->title = "Вход на сайт";
 ?>
 <div class="site-login ">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h2><?= Html::encode($this->title) ?></h2><br/>
 
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',

@@ -23,7 +23,7 @@ AppAsset::register($this);
 
     <?php $this->head() ?>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body >
 <?php $this->beginBody() ?>
 
 <div class="wrap">
@@ -54,7 +54,7 @@ AppAsset::register($this);
 //    NavBar::end();
 ?> 
        <div class="container">   
-        <div class='row'>
+        <div class='row' id='header'>
             <div class='col-lg-1 col-md-1'>
             </div>
             
@@ -65,27 +65,32 @@ AppAsset::register($this);
             --><h3 style='font-family:verdana;'>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
 Белгородской области</small></h3><!--
         --></div><!--
-        --><div class='col-lg-3  col-md-3 col-sm-4 col-xs-12 text-center vcenter' style='font-family:vardana;font-size:14pt;'><!--
+        --><div class='col-lg-3  col-md-3 col-sm-4 col-xs-12 vcenter' style='font-family:vardana;font-size:14pt;'><!--
             --><div class='vcenter'><span style='font-size:18pt' class="glyphicon glyphicon-phone-alt text-info"></span></div> +7 (4722) 72-00-75<br/><!--
+            --><div class='vcenter'><span style='font-size:18pt' class="glyphicon glyphicon-time text-info"></span></div> Понедельник - суббота с&nbsp;10<sup>00</sup>&nbsp;до&nbsp;16<sup>00</sup><!--
         --></div>
        </div>
            </div>
-
+    
+    
+<div class='nav-wrapper'>
     <?php    
 
     NavBar::begin([
-        'brandOptions' => [],
-        'brandLabel' => "",
+        'brandOptions' => ['style'=>'','class'=>'visible-xs'],
+        'brandLabel' => '<form class="" style="margin-top:-7px;">
+    <button class="btn btn-primary btn-outline" type="submit">Записаться</button>
+  </form>',
 
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar navbar-default ','data-spy'=>'affix','data-offset-top'=>140
+            'class' => 'navbar navbar-default ','id'=>'myAffix'
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav col-lg-12','style'=>'float:none'],
+        'options' => ['class' => 'navbar-nav','style'=>''],
         'items' => [
-            ['label' => '','options'=>['class'=>'col-lg-1 col-md-1 col-sm-1']],
+            ['label' => '','options'=>['class'=>'col-lg-2 col-md-2 col-sm-2 hidden-xs']],
             ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'О нас', 'url' => ['/site/about']],
             ['label' => 'Контакты', 'url' => ['/site/contact']],
@@ -100,16 +105,21 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            ),
+            '<li class="hidden-xs col-lg-2 col-md-2 col-sm-2" style=""><form class="" style="padding-top:8px;padding-left:20px">
+    <button class="btn btn-primary btn-outline" type="submit">Записаться</button>
+  </form></li>',
+            
         ],
     ]);
+    
     NavBar::end();
        
     ?>
+</div>
 
 
-
-    <div class='col-lg-offset-1 col-md-offset-1 col-lg-10  col-md-10 col-sm-12 col-xs-12' style="padding-bottom:20px">
+    <div class='col-lg-offset-1 col-md-offset-1 col-lg-10  col-md-10 col-sm-12 col-xs-12' style="padding-bottom:20px; ">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             'homeLink'=>['label'=>'Главная','url'=>Url::to(['site/index'])]
