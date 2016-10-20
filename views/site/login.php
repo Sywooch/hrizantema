@@ -28,7 +28,7 @@ $this->title = "Вход на сайт";
 
         <div class="form-group">
             <div class="col-lg-offset-1 col-md-offset-1 col-lg-11">
-                <?= Html::submitButton('Войти', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?> | <?= Html::a("Зарегистрироваться", Url::toRoute(['user/add']))?> | <?=Html::a('Забыли пароль?', Url::to(["user/remember-pass"],true),['target'=>'_blank'])?>
+                <?= Html::submitButton('Войти', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?> | <?= Html::a("Зарегистрироваться", Url::toRoute(['user/add']))?> | <?=Html::a('Забыли&nbsp;пароль?', Url::to(["user/remember-pass"],true),['target'=>'_blank'])?>
             </div>
         </div>
 

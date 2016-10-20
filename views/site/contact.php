@@ -78,7 +78,7 @@ $this->title = "Контакты";
  <span class="glyphicon glyphicon-phone"></span> +7-909-202-08-24<br/>
  <span class="glyphicon glyphicon-envelope"></span> trav.oks@yandex.ru
 
-<h3 class="hilight">Адрес:</h3> <div class="vcenter"><span class="glyphicon glyphicon-map-marker"></span></div> г. Белгород, ул. Горького, д. 76<br/><br/>
+<h3 class="hilight">Адрес:</h3> <div class="vcenter"><span class="glyphicon glyphicon-map-marker"></span></div> г. Белгород, ул. Горького, д.&nbsp;76<br/><br/>
 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=CflMpjcqyUx-J5tQPKAYasc0w_Ufkf9_&amp;width=100%&amp;height=422&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 <br/>
 </div>

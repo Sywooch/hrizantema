@@ -4,6 +4,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use app\modules\admin\filters\AccessFilter;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 
@@ -17,21 +18,7 @@ class SiteController extends Controller
     {
         return [
             'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
+                'class' => AccessFilter::className(),
             ],
         ];
     }
@@ -57,9 +44,9 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
+    public function actionQuest()
     {
-        return $this->render('index');
+        return $this->render('quest');
     }
 
    

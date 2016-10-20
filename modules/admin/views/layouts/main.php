@@ -30,7 +30,7 @@ AppAsset::register($this);
 
 </div>
 <div class="wrap">
-    <div class="label-success text-center h2" style="margin:0px">Режим администратора</div>
+    <div class="text-center h2" style="margin:0px">Режим администратора</div>
     <?php
     
     NavBar::begin([
@@ -43,16 +43,25 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left '],
         'items' => [
-            ['label' => 'Админка', 'url' => ['/site/index']],
-            ['label' => 'Курсы', 'url' => ['/site/about']],    
+            ['label' => 'Мероприятия', 'url' => ['/admin/site/quest']],
+            ['label' => 'Новости', 'url' => ['/admin/site/news']],
+            ['label' => 'Курсы', 'url' => ['/admin/site/course']],  
+            ['label' => 'Заявки', 'url' => ['/admin/site/order']],
         ],
     ]);
     
         echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right '],
+        'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'На сайт', 'url' => ['/site/index']],
-            
+            '<li>'
+                . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
+                . Html::submitButton(
+                    'Выйти ()',
+                    ['class' => 'btn btn-link']
+                )
+                . Html::endForm()
+                . '</li>'
         ],
     ]);
     NavBar::end();

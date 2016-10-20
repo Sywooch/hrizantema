@@ -58,16 +58,22 @@ AppAsset::register($this);
             <div class='col-lg-1 col-md-1'>
             </div>
             
-            <div class='col-lg-2 col-md-2 col-sm-2 col-xs-3 text-center' style='max-width:130px;  padding-top:10px; padding-bottom:10px'>
-                <img alt="Brand" src="<?=Yii::$app->request->baseUrl?>/images/hriz2.png" class='img-responsive'/>
+            <div class='col-lg-2 col-md-2 col-sm-2 col-xs-3 text-center' style='max-width:120px; min-width:60px; padding-top:10px; padding-bottom:10px'>
+                <?= Html::a('<img alt="Brand" src="'.Yii::$app->request->baseUrl.'/images/hriz2.png" class="img-responsive"/>',['site/index'])?>
             </div>
             <div class='col-lg-5  col-md-6 col-sm-6 col-xs-9 vcenter' ><!--
-            --><h3 style='font-family:verdana;'>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
+            --><h3 class="hidden-xs" style='font-family:verdana; '>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
 Белгородской области</small></h3><!--
+            --><h4 class="visible-xs" style='font-family:verdana; '>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
+Белгородской области</small></h4><!--
         --></div><!--
-        --><div class='col-lg-3  col-md-3 col-sm-4 col-xs-12 vcenter' style='font-family:vardana;font-size:14pt;'><!--
+        --><div class='hidden-xs col-lg-3  col-md-3 col-sm-4 col-xs-12 vcenter' style='font-family:verdana;font-size:14pt;'><!--
             --><div class='vcenter'><span style='font-size:18pt' class="glyphicon glyphicon-phone-alt text-info"></span></div> +7 (4722) 72-00-75<br/><!--
-            --><div class='vcenter'><span style='font-size:18pt' class="glyphicon glyphicon-time text-info"></span></div> Понедельник - суббота с&nbsp;10<sup>00</sup>&nbsp;до&nbsp;16<sup>00</sup><!--
+            --><div class='vcenter'><span style='font-size:16pt' class="glyphicon glyphicon-time text-info"></span></div><span style="font-size:12pt"> Понедельник - суббота &nbsp;10<sup>00</sup>&nbsp;-&nbsp;16<sup>00</sup></span><!--
+        --></div><!--
+        --><div class='visible-xs col-lg-3  col-md-3 col-sm-4 col-xs-12 vcenter text-center' style='font-family:verdana;font-size:12pt;'><!--
+            --><div class='vcenter'><span style='font-size:14pt' class="glyphicon glyphicon-phone-alt text-info"></span></div> +7 (4722) 72-00-75<br/><!--
+            --><div class='vcenter'><span style='font-size:14pt' class="glyphicon glyphicon-time text-info"></span></div> Понедельник - суббота &nbsp;10<sup>00</sup>&nbsp;-&nbsp;16<sup>00</sup><!--
         --></div>
        </div>
            </div>

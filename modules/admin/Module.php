@@ -7,6 +7,7 @@ class Module extends \yii\base\Module {
     {
         parent::init();
         //$this->params['foo'] = 'bar';
+        \Yii::$app->errorHandler->errorAction = 'admin/site/error';
         \Yii::configure($this, require(__DIR__ . '/config.php'));
         // ...  other initialization code ...
     }

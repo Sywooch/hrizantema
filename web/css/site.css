@@ -119,7 +119,7 @@ a.desc:after {
 }
 
 h3.hilight {
-    border-left:10px #337ab7 solid;
+    border-left:10px #ddd solid;
     text-indent:5px;
     margin-left:-15px;
     padding-top:4px;
