@@ -84,6 +84,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
                 $this->accessToken=NULL;//ну примерно уникальный
                 $this->authKey=NULL;//тоже примерно уникальный
                 $this->password=md5($this->password, false);
+                $this->admin=0;
                 return parent::save($runValidation);//родительский метод save
             } else {
                 $this->addError('mail','Произошла ошибка отправки кода подтверждения на Ваш e-mail. Пожалуйста, попробуйте зарегистрироваться позднее.');

@@ -58,7 +58,7 @@ AppAsset::register($this);
             <div class='col-lg-1 col-md-1'>
             </div>
             
-            <div class='col-lg-2 col-md-2 col-sm-2 col-xs-3 text-center' style='max-width:120px; min-width:60px; padding-top:10px; padding-bottom:10px'>
+            <div class='col-lg-2 col-md-2 col-sm-2 col-xs-3 text-center' style='max-width:120px; min-width:90px; padding-top:10px; padding-bottom:10px'>
                 <?= Html::a('<img alt="Brand" src="'.Yii::$app->request->baseUrl.'/images/hriz2.png" class="img-responsive"/>',['site/index'])?>
             </div>
             <div class='col-lg-5  col-md-6 col-sm-6 col-xs-9 vcenter' ><!--
@@ -92,29 +92,41 @@ AppAsset::register($this);
         'options' => [
             'class' => 'navbar navbar-default ','id'=>'myAffix'
         ],
+
+    ]);
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav col-lg-1 col-md-1 hidden-sm hidden-xs'],
+                'items' => [
+            ['label' => '']]
+        
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav','style'=>''],
         'items' => [
-            ['label' => '','options'=>['class'=>'col-lg-2 col-md-2 col-sm-2 hidden-xs']],
             ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'О нас', 'url' => ['/site/about']],
             ['label' => 'Контакты', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
+                ['label'=>''
+                . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form1'])
                 . Html::submitButton(
                     'Выйти (' . Yii::$app->user->identity->name . ')',
                     ['class' => 'btn btn-link']
                 )
                 . Html::endForm()
-                . '</li>'
+                . '','encode'=>false]
             ),
-            '<li class="hidden-xs col-lg-2 col-md-2 col-sm-2" style=""><form class="" style="padding-top:8px;padding-left:20px">
-    <button class="btn btn-primary btn-outline" type="submit">Записаться</button>
-  </form></li>',
+            ['label'=>''
+                . Html::beginForm("", 'post', ['class' => 'navbar-form2', 'style'=>'float:left'])
+                . Html::submitButton(
+                    'Записаться',
+                    ['class' => 'btn btn-primary btn-outline']
+                )
+                . Html::endForm()
+                . '','encode'=>false],
+
             
         ],
     ]);

@@ -159,3 +159,12 @@ h3.hilight {
 .btn-danger.btn-outline:hover {
     color: #fff;
 }
+
+.navbar-form1 button {
+    margin:-6px;
+    border:0px;
+}
+
+.navbar-form2 button {
+    margin:-7px;
+}
