@@ -62,9 +62,9 @@ AppAsset::register($this);
                 <?= Html::a('<img alt="Brand" src="'.Yii::$app->request->baseUrl.'/images/hriz2.png" class="img-responsive"/>',['site/index'])?>
             </div>
             <div class='col-lg-5  col-md-6 col-sm-6 col-xs-9 vcenter' ><!--
-            --><h3 class="hidden-xs" style='font-family:verdana; '>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
+            --><h3 class="hidden-xs" style='font-family:Verdana sans-serif;'>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
 Белгородской области</small></h3><!--
-            --><h4 class="visible-xs" style='font-family:verdana; '>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
+            --><h4 class="visible-xs" style='font-family:Verdana sans-serif; '>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
 Белгородской области</small></h4><!--
         --></div><!--
         --><div class='hidden-xs col-lg-3  col-md-3 col-sm-4 col-xs-12 vcenter' style='font-family:verdana;font-size:14pt;'><!--

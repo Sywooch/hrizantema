@@ -12,7 +12,7 @@ use yii\helpers\Url;
                  'style'=>'height:100%;'
              ],
               'header'=>false,
-              'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="/hrizantema/web/images/clock.png"></div>',  
+              'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="'.Yii::getAlias('@web').'/images/clock.png"></div>',  
               'footer' => false, // show footer or false not showing
               'type' => true, // get style for panel \amass\panel::TYPE_DEFAULT  default
          ]); 
@@ -43,7 +43,7 @@ use yii\helpers\Url;
             'style'=>'height:100%;'
         ],
          'header'=>false,
-         'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="/hrizantema/web/images/teacher.png"></div>',  
+         'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="'.Yii::getAlias('@web').'/images/teacher.png"></div>',  
          'footer' => false, // show footer or false not showing
          'type' => true, // get style for panel \amass\panel::TYPE_DEFAULT  default
 ]); 
@@ -79,7 +79,7 @@ use yii\helpers\Url;
                  'style'=>'height:100%;'
              ],
               'header'=>false,
-              'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="/hrizantema/web/images/list.png"></div>',  
+              'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="'.Yii::getAlias('@web').'/images/list.png"></div>',  
               'footer' => false, // show footer or false not showing
               'type' => true, // get style for panel \amass\panel::TYPE_DEFAULT  default
          ]); 
@@ -110,7 +110,7 @@ use yii\helpers\Url;
             'style'=>'height:100%;'
         ],
          'header'=>false,
-         'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="/hrizantema/web/images/planet.png"></div>',  
+         'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="'.Yii::getAlias('@web').'/images/planet.png"></div>',  
          'footer' => false, // show footer or false not showing
          'type' => true, // get style for panel \amass\panel::TYPE_DEFAULT  default
 ]); 
