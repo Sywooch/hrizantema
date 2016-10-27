@@ -104,7 +104,6 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav','style'=>''],
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'О нас', 'url' => ['/site/about']],
             ['label' => 'Контакты', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Войти', 'url' => ['/site/login']]
@@ -113,19 +112,24 @@ AppAsset::register($this);
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form1'])
                 . Html::submitButton(
                     'Выйти (' . Yii::$app->user->identity->name . ')',
-                    ['class' => 'btn btn-link']
+                    ['class' => 'btn btn-link','style'=>'padding-left:6px']
                 )
                 . Html::endForm()
                 . '','encode'=>false]
             ),
             ['label'=>''
-                . Html::beginForm("", 'post', ['class' => 'navbar-form2', 'style'=>'float:left'])
+                . Html::beginForm("", 'post', ['class' => 'navbar-form2 ', 'style'=>'float:left'])
                 . Html::submitButton(
                     'Записаться',
                     ['class' => 'btn btn-primary btn-outline']
                 )
-                . Html::endForm()
-                . '','encode'=>false],
+                . Html::endForm(),
+                'encode'=>false,
+                'options'=>[
+                    'class'=>'hidden-xs'
+                ]
+            ],
+
 
             
         ],

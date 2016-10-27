@@ -7,10 +7,28 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'modules' => [
+        'gridview' =>  [
+            'class' => '\kartik\grid\Module'
+        ],
         'admin' => [
             'class' => 'app\modules\admin\Module',
             // ... other configurations for the module ...
         ],
+    ],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\Controller',
+            'access' => ['@'], //глобальный доступ к фаил менеджеру @ - для авторизорованных , ? - для гостей , чтоб открыть всем ['@', '?']
+            'disabledCommands' => ['netmount'], //отключение ненужных команд https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#commands
+            'roots' => [
+                [
+                    'baseUrl'=>'@web/images',
+                    'basePath'=>'@webroot/images',
+                    'path' => '',
+                    'name' => 'Файлы'
+                ]
+            ]
+        ]
     ],
     'components' => [
         'request' => [
@@ -111,5 +129,8 @@ $config = [
 //        'class' => 'yii\gii\Module',
 //    ];
 //}
+
+
+
 
 return $config;

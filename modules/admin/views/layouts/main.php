@@ -44,7 +44,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-left '],
         'items' => [
             ['label' => 'Мероприятия', 'url' => ['/admin/site/quest']],
-            ['label' => 'Новости', 'url' => ['/admin/site/news']],
+            ['label' => 'Новости', 'url' => ['/admin/news']],
             ['label' => 'Курсы', 'url' => ['/admin/site/course']],  
             ['label' => 'Заявки', 'url' => ['/admin/site/order']],
         ],
