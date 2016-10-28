@@ -57,7 +57,7 @@ use yii\helpers\Url;
             'style'=>'margin-bottom:0px;height:100%;'
         ],
          'headerTitle' => '<b>Опытные преподаватели</b>', // Title text can use tag
-         'content' => 'Каждый из преподавателей прошел профессиональную подготовку в соответствующих учебных заведениях и имеет большой опыт в своей проф. области. Подробнее читайте <a class="go_to" href="#teachers">далее</a>', // some content in body
+         'content' => 'Каждый из преподавателей прошел профессиональную подготовку в соответствующих учебных заведениях и имеет большой опыт в своей проф. области. Подробнее читайте <a class="go_to" href="#collective">далее</a>', // some content in body
          'footer' => false, // show footer or false not showing
          'type' => true, // get style for panel \amass\panel::TYPE_DEFAULT  default
 ]); 
