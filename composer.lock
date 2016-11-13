@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e1e9d89abd118afcca4b0beb6c95b1f4",
-    "content-hash": "aee158ba29d3d8da5d13848975b4e157",
+    "hash": "f63d1f1732881b823fa9d0eba25d5f0a",
+    "content-hash": "91d0e636274de867ce6ed041bcb769b6",
     "packages": [
         {
             "name": "amass/yii2-bootstrap-panel-widget",
@@ -153,6 +153,51 @@
             ]
         },
         {
+            "name": "bower-asset/fullcalendar",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fullcalendar/fullcalendar.git",
+                "reference": "8aa93919d8227140f98bba543cd97ee9975426f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fullcalendar/fullcalendar/zipball/8aa93919d8227140f98bba543cd97ee9975426f7",
+                "reference": "8aa93919d8227140f98bba543cd97ee9975426f7",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=2.0.0",
+                "bower-asset/moment": ">=2.9.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/fullcalendar.js",
+                    "dist/fullcalendar.css"
+                ],
+                "bower-asset-ignore": [
+                    "*",
+                    "**/.*",
+                    "!/dist/**",
+                    "!/README.*",
+                    "!/LICENSE.*",
+                    "!/CHANGELOG.*",
+                    "!/CONTRIBUTING.*"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Full-sized drag & drop event calendar",
+            "keywords": [
+                "calendar",
+                "event",
+                "full-sized",
+                "jquery-plugin"
+            ]
+        },
+        {
             "name": "bower-asset/jquery",
             "version": "2.2.4",
             "source": {
@@ -252,6 +297,48 @@
                 "jquery",
                 "mask",
                 "plugins"
+            ]
+        },
+        {
+            "name": "bower-asset/moment",
+            "version": "2.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "73f3c91174406b24fe66f19600958a6f43f2acd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/73f3c91174406b24fe66f19600958a6f43f2acd8",
+                "reference": "73f3c91174406b24fe66f19600958a6f43f2acd8",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "moment.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "benchmarks",
+                    "bower_components",
+                    "meteor",
+                    "node_modules",
+                    "scripts",
+                    "tasks",
+                    "test",
+                    "component.json",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "ender.js",
+                    "Gruntfile.js",
+                    "Moment.js.nuspec",
+                    "package.js",
+                    "package.json",
+                    "ISSUE_TEMPLATE.md",
+                    "typing-tests"
+                ]
+            },
+            "license": [
+                "MIT"
             ]
         },
         {
@@ -419,6 +506,46 @@
                 "html"
             ],
             "time": "2016-07-16 12:58:58"
+        },
+        {
+            "name": "istvan-ujjmeszaros/bootstrap-duallistbox",
+            "version": "3.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox.git",
+                "reference": "4ebd0727b27425b96204cb0dde1d8ce564676403"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/istvan-ujjmeszaros/bootstrap-duallistbox/zipball/4ebd0727b27425b96204cb0dde1d8ce564676403",
+                "reference": "4ebd0727b27425b96204cb0dde1d8ce564676403",
+                "shasum": ""
+            },
+            "suggest": {
+                "components/jquery": "2.0.*",
+                "twbs/bootstrap": "3.*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "István Ujj-Mészáros",
+                    "homepage": "https://github.com/istvan-ujjmeszaros"
+                }
+            ],
+            "description": "A responsive dual listbox widget optimized for Twitter Bootstrap. It works on all modern browsers and on touch devices.",
+            "homepage": "http://www.virtuosoft.eu/code/bootstrap-duallistbox/",
+            "keywords": [
+                "bootstrap",
+                "bootstrap duallistbox",
+                "bootstrap select",
+                "duallistbox",
+                "select"
+            ],
+            "time": "2016-09-06 13:18:25"
         },
         {
             "name": "kartik-v/bootstrap-fileinput",
@@ -715,12 +842,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "448db13904dad68153ef466bbc905b916a2a5900"
+                "reference": "ff39cb3340510b5634f27108727f82c6ce9fb242"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/448db13904dad68153ef466bbc905b916a2a5900",
-                "reference": "448db13904dad68153ef466bbc905b916a2a5900",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/ff39cb3340510b5634f27108727f82c6ce9fb242",
+                "reference": "ff39cb3340510b5634f27108727f82c6ce9fb242",
                 "shasum": ""
             },
             "require": {
@@ -757,7 +884,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-10-22 16:52:42"
+            "time": "2016-11-05 15:33:03"
         },
         {
             "name": "kartik-v/yii2-helpers",
@@ -1120,12 +1247,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-datepicker.git",
-                "reference": "33c7f4751291eaa34413b7b82b1659ae44ea8b23"
+                "reference": "92e04c6a9ff90c4290db7566f68af429f2d641d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/33c7f4751291eaa34413b7b82b1659ae44ea8b23",
-                "reference": "33c7f4751291eaa34413b7b82b1659ae44ea8b23",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/92e04c6a9ff90c4290db7566f68af429f2d641d5",
+                "reference": "92e04c6a9ff90c4290db7566f68af429f2d641d5",
                 "shasum": ""
             },
             "require": {
@@ -1166,7 +1293,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-10-08 18:16:58"
+            "time": "2016-11-11 15:42:04"
         },
         {
             "name": "kartik-v/yii2-widget-datetimepicker",
@@ -2148,6 +2275,55 @@
             "time": "2016-01-13 18:15:48"
         },
         {
+            "name": "philippfrenzel/yii2fullcalendar",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/philippfrenzel/yii2fullcalendar.git",
+                "reference": "4b287f2d5a5ccf6720e66b63c7f29e41f025bb6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/philippfrenzel/yii2fullcalendar/zipball/4b287f2d5a5ccf6720e66b63c7f29e41f025bb6b",
+                "reference": "4b287f2d5a5ccf6720e66b63c7f29e41f025bb6b",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/fullcalendar": "3.*",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-jui": "*"
+            },
+            "require-dev": {
+                "codeception/codeception": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yii2fullcalendar\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philipp Frenzel",
+                    "email": "philipp@frenzel.net",
+                    "homepage": "http://www.frenzel.net/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 fullcalendar Widgets",
+            "homepage": "http://www.frenzel.net/",
+            "keywords": [
+                "fullcalendar",
+                "yii2"
+            ],
+            "time": "2016-09-23 10:20:14"
+        },
+        {
             "name": "skeeks/yii2-ckeditor",
             "version": "1.0.4",
             "source": {
@@ -2192,6 +2368,51 @@
                 "yii2"
             ],
             "time": "2015-11-07 17:14:06"
+        },
+        {
+            "name": "softark/yii2-dual-listbox",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/softark/yii2-dual-listbox.git",
+                "reference": "e2d46973271449043b8faa248c9c8f83afe895cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/softark/yii2-dual-listbox/zipball/e2d46973271449043b8faa248c9c8f83afe895cd",
+                "reference": "e2d46973271449043b8faa248c9c8f83afe895cd",
+                "shasum": ""
+            },
+            "require": {
+                "istvan-ujjmeszaros/bootstrap-duallistbox": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "softark\\duallistbox\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nobuo Kihara",
+                    "email": "softark@gmail.com",
+                    "homepage": "http://softark.net"
+                }
+            ],
+            "description": "Dual Listbox Widget for Yii 2",
+            "keywords": [
+                "dual-listbox",
+                "duallistbox",
+                "widget",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2016-01-12 23:14:58"
         },
         {
             "name": "studio-42/elfinder",
@@ -2911,7 +3132,8 @@
         "kartik-v/yii2-widget-datepicker": 20,
         "kartik-v/yii2-widgets": 20,
         "kartik-v/yii2-grid": 20,
-        "amass/yii2-bootstrap-panel-widget": 20
+        "amass/yii2-bootstrap-panel-widget": 20,
+        "softark/yii2-dual-listbox": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

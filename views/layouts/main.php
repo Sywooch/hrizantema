@@ -59,7 +59,7 @@ AppAsset::register($this);
             </div>
             
             <div class='col-lg-2 col-md-2 col-sm-2 col-xs-3 text-center' style='max-width:120px; min-width:60px; padding-top:10px; padding-bottom:10px'>
-                <?= Html::a('<img alt="Brand" src="'.Yii::$app->request->baseUrl.'/images/hriz2.png" class="img-responsive"/>',['site/index'])?>
+                <?= Html::a('<img alt="Brand" src="'.Yii::$app->request->baseUrl.'/images/hriz3.png" class="img-responsive"/>',['site/index'])?>
             </div>
             <div class='col-lg-5  col-md-6 col-sm-6 col-xs-9 vcenter' ><!--
             --><h3 class="hidden-xs" style='font-family:Verdana sans-serif;'>ХРИЗАНТЕМА<br/><small>Первый Центр повышения квалификации и профессиональной подготовки
@@ -100,6 +100,24 @@ AppAsset::register($this);
             ['label' => '']]
         
     ]);
+    
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav'],
+                'items' => [
+                    ['label'=>'<img  src=\''.Yii::$app->request->baseUrl.'/images/hriz4.png\' class=\'img-responsive\' />',
+                'url' => "",
+                'encode'=>false,
+                'options'=>[
+                    'class'=>'menu-not-padding',
+                    'style'=>'display:none;float:right',
+                    'id'=>'myLabel'
+                ]
+            ],
+                    
+                ]
+        
+    ]);
+    
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav','style'=>''],
         'items' => [

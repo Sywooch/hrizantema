@@ -48,7 +48,19 @@ class SiteController extends Controller
     {
         return $this->render('quest');
     }
+    
+    public function actionCourse()
+    {
+        return $this->render('course');
+    }
 
-
-   
+    public function actionCategories()
+    {
+        return $this->render('categories');
+    }
+    
+    public function actionTiming()
+    {
+        return $this->render('timing');
+    }  
 }

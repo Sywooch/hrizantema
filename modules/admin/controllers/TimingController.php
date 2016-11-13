@@ -3,8 +3,7 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\News;
-use app\models\NewsSearch;
+use app\models\Timing;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,7 +11,7 @@ use yii\filters\VerbFilter;
 /**
  * NewsController implements the CRUD actions for News model.
  */
-class NewsController extends Controller
+class TimingController extends Controller
 {
     public $layout = 'main';
     /**
@@ -36,12 +35,11 @@ class NewsController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new NewsSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $model = new Timing();
+        $data = $model->find()->all();
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'data' => $data,
         ]);
     }
 
@@ -68,10 +66,10 @@ class NewsController extends Controller
      */
     public function actionCreate()
     {
-        $model = new News();
+        $model = new Timing();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -90,7 +88,7 @@ class NewsController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -119,7 +117,7 @@ class NewsController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = News::findOne($id)) !== null) {
+        if (($model = Timing::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('Запрашиваемая страница не существует!');

@@ -27,7 +27,9 @@
 	"skeeks/yii2-ckeditor": "*",
         "mihaildev/yii2-ckeditor": "*",
         "kartik-v/yii2-grid": "@dev",
-        "amass/yii2-bootstrap-panel-widget": "dev-master"
+        "amass/yii2-bootstrap-panel-widget": "dev-master",
+	"philippfrenzel/yii2fullcalendar":"*",
+        "softark/yii2-dual-listbox": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

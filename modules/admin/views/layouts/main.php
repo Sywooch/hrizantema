@@ -45,7 +45,12 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Мероприятия', 'url' => ['/admin/site/quest']],
             ['label' => 'Новости', 'url' => ['/admin/news']],
-            ['label' => 'Курсы', 'url' => ['/admin/site/course']],  
+            ['label' => 'Курсы', 'items'=>[
+                    ['label' => 'Категории','url' => ['/admin/category']],
+                    ['label' => 'Курсы','url' => ['/admin/course']],
+                    ['label' => 'Расписание','url' => ['/admin/timing']]
+                ]
+            ],  
             ['label' => 'Заявки', 'url' => ['/admin/site/order']],
         ],
     ]);
@@ -57,7 +62,7 @@ AppAsset::register($this);
             '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
                 . Html::submitButton(
-                    'Выйти ()',
+                    'Выйти (' . Yii::$app->user->identity->name . ')',
                     ['class' => 'btn btn-link']
                 )
                 . Html::endForm()
