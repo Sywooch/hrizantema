@@ -85,7 +85,7 @@ AppAsset::register($this);
     NavBar::begin([
         'brandOptions' => ['style'=>'','class'=>'visible-xs'],
         'brandLabel' => '<form class="" style="margin-top:-7px;">
-    <img id="myLabel2" style="float:left;margin-top:-5px;margin-left:-5px;padding-right:5px;" src=\''.Yii::$app->request->baseUrl.'/images/hriz4.png\' class=\'img-responsive\' /><button class="btn btn-primary btn-outline" type="submit">Записаться</button>
+    <img id="myLabel2" style="float:left;margin-top:-5px;margin-left:-5px;padding-right:5px;" src=\''.Yii::$app->request->baseUrl.'/images/hriz4.png\' class=\'img-responsive\' /><button onclick=\'window.location.href=window.location.protocol+"//"+window.location.hostname+"/site/request"; return false;\' class="btn btn-primary btn-outline" type="submit">Записаться</button>
   </form>',
 
         'brandUrl' => Yii::$app->homeUrl,
