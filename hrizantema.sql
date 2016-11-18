@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Ноя 13 2016 г., 14:31
+-- Время создания: Ноя 18 2016 г., 08:56
 -- Версия сервера: 5.7.16
 -- Версия PHP: 5.6.27
 
@@ -112,6 +112,33 @@ CREATE TABLE `News` (
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `Request`
+--
+
+CREATE TABLE `Request` (
+  `id` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `request_date` varchar(100) DEFAULT NULL,
+  `course` int(11) DEFAULT NULL,
+  `name` varchar(150) NOT NULL,
+  `phone` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `Request`
+--
+
+INSERT INTO `Request` (`id`, `status`, `date`, `request_date`, `course`, `name`, `phone`) VALUES
+(1, 1, '2016-11-17 21:14:48', '16.11.2016 ', 17, 'Михаил', '89192874497'),
+(2, 1, '2016-11-17 21:16:54', '01.11.2016 ', 3, 'Tarja', 'Tuuren'),
+(3, 1, '2016-11-17 21:17:46', '01.11.2016 ', 3, 'Tarja', 'Tuuren'),
+(4, 1, '2016-11-17 21:19:35', '25.11.2016 ', 17, 'Наталья', '89040805250'),
+(5, 1, '2016-11-17 21:20:04', '11.11.2016 ', 7, 'Jktu', 'Dtlbyby');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `Timing`
 --
 
@@ -132,10 +159,12 @@ CREATE TABLE `Timing` (
 --
 
 INSERT INTO `Timing` (`id`, `id_course`, `allDay`, `dateStart`, `dateEnd`, `timeStart`, `timeEnd`, `dow`, `is_dow`) VALUES
-(11, 6, 0, '2016-11-02 ', '2016-11-02 ', '08:00', '17:00', '0', 0),
-(12, 8, 0, '2016-11-03 ', '2016-11-03 ', '08:00', '17:00', '0', 0),
-(13, 15, 0, '2016-11-03 ', '2016-11-03 ', '10:20', '15:20', '0', 0),
-(14, 23, 0, '2016-11-03 ', '2016-11-03 ', '11:25', '18:25', '0', 0);
+(17, 3, 1, '', '', '', '', '2,6', 1),
+(18, 3, 1, '2016-11-01 ', '2016-11-02 ', '', '', '', 0),
+(20, 5, 0, '2016-11-23 ', '2016-11-23 ', '09:05', '16:05', '', 0),
+(21, 8, 0, '', '', '09:50', '11:50', '1,2,5', 1),
+(22, 14, 0, '2016-11-03 ', '2016-11-03 ', '10:00', '10:25', '', 0),
+(23, 20, 0, '2016-11-18 ', '2016-11-18 ', '08:30', '12:00', '', 0);
 
 -- --------------------------------------------------------
 
@@ -192,6 +221,12 @@ ALTER TABLE `News`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `Request`
+--
+ALTER TABLE `Request`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `Timing`
 --
 ALTER TABLE `Timing`
@@ -224,10 +259,15 @@ ALTER TABLE `Course`
 ALTER TABLE `News`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT для таблицы `Request`
+--
+ALTER TABLE `Request`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT для таблицы `Timing`
 --
 ALTER TABLE `Timing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT для таблицы `User`
 --
