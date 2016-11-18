@@ -69,7 +69,7 @@ echo Carousel::widget([
 </div> 
 
 <div style='display:flex'>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
         <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret1.jpg'/>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-collective" style="margin:auto">
@@ -87,7 +87,7 @@ echo Carousel::widget([
             <b>Комарова Анастасия Ивановна</b> - реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Равным образом рамки и место обучения кадров играет важную роль в формировании существенных финансовых и административных условий. 
 
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
         <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret2.jpg'/>
     </div>
 </div>
@@ -95,7 +95,7 @@ echo Carousel::widget([
 <div class="visible-xs col-lg-10" style="margin-top:40px;"></div>
 
 <div style='display:flex'>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
         <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret3.jpg'/>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-collective" style="margin:auto">
@@ -113,7 +113,7 @@ echo Carousel::widget([
             <b>Петрова Надежда Петровна</b> - идейные соображения высшего порядка, а также сложившаяся структура организации требуют от нас анализа существенных финансовых и административных условий.
 
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
         <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret4.jpg'/>
     </div>
 </div>

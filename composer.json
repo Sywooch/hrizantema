@@ -29,7 +29,8 @@
         "kartik-v/yii2-grid": "@dev",
         "amass/yii2-bootstrap-panel-widget": "dev-master",
 	"philippfrenzel/yii2fullcalendar":"*",
-        "softark/yii2-dual-listbox": "dev-master"
+        "softark/yii2-dual-listbox": "dev-master",
+        "kartik-v/yii2-popover-x": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

@@ -85,7 +85,7 @@ AppAsset::register($this);
     NavBar::begin([
         'brandOptions' => ['style'=>'','class'=>'visible-xs'],
         'brandLabel' => '<form class="" style="margin-top:-7px;">
-    <button class="btn btn-primary btn-outline" type="submit">Записаться</button>
+    <img id="myLabel2" style="float:left;margin-top:-5px;margin-left:-5px;padding-right:5px;" src=\''.Yii::$app->request->baseUrl.'/images/hriz4.png\' class=\'img-responsive\' /><button class="btn btn-primary btn-outline" type="submit">Записаться</button>
   </form>',
 
         'brandUrl' => Yii::$app->homeUrl,
@@ -102,7 +102,7 @@ AppAsset::register($this);
     ]);
     
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav'],
+        'options' => ['class' => 'navbar-nav hidden-xs'],
                 'items' => [
                     ['label'=>'<img  src=\''.Yii::$app->request->baseUrl.'/images/hriz4.png\' class=\'img-responsive\' />',
                 'url' => "",
@@ -136,15 +136,14 @@ AppAsset::register($this);
                 . '','encode'=>false]
             ),
             ['label'=>''
-                . Html::beginForm("", 'post', ['class' => 'navbar-form2 ', 'style'=>'float:left'])
-                . Html::submitButton(
+                .Html::button(
                     'Записаться',
-                    ['class' => 'btn btn-primary btn-outline']
-                )
-                . Html::endForm(),
+                    ['class' => 'btn btn-primary btn-outline','name'=>'request']
+                ),
+                'url'=>['request'],
                 'encode'=>false,
                 'options'=>[
-                    'class'=>'hidden-xs'
+                    'class'=>'hidden-xs my-form'
                 ]
             ],
 

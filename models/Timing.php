@@ -62,10 +62,19 @@ class Timing extends \yii\db\ActiveRecord
                     $dow = $dow.$value.",";
                 }
                 $dow = substr($dow, 0, -1);
+                $this->dateStart = "";
+                $this->dateEnd = "";
             }
             $this->dow = $dow;
         } else {
-            $this->dow = 0;
+            $this->dow = "";
+        }
+        if ($this->allDay==1) {
+            $this->timeStart = "";
+            $this->timeEnd = "";
+        }
+        if ($this->dateStart!==""&&$this->dateEnd=="") {
+            $this->dateEnd = $this->dateStart;
         }
         
         

@@ -6,6 +6,8 @@ use yii\helpers\Url;
 
 $this->title = 'Расписание';
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
         <p>
         <?= Html::a('Создать событие', ['create'], ['class' => 'btn btn-success']) ?>
@@ -17,9 +19,9 @@ $this->params['breadcrumbs'][] = $this->title;
     $Event = new \yii2fullcalendar\models\Event();
     $Event->id = $item->id;
     $course = Course::findOne($item->id_course);
-    $Event->title = $course['name'];
+    $Event->title = "<span id=\"timing".$item->id."\">".$course['name']."</span>";
     if ($item->allDay=='0') {
-        if ($item->dow=='0'){
+        if (empty($item->dow)){
             $Event->start = date('Y-m-d\TH:i:s\Z',strtotime($item->dateStart." ".$item->timeStart));
             $Event->end = date('Y-m-d\TH:i:s\Z',strtotime($item->dateEnd." ".$item->timeEnd));  
         } else {
@@ -27,11 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
             $Event->end = $item->timeEnd;
         }
     } else {
-        $Event->allDay = true;
-        $Event->start = $item->dateStart;
-        $Event->end = date('Y-m-d',strtotime($item->dateEnd)+86400);         
+        if (empty($item->dow)){
+            $Event->allDay = true;
+            $Event->start = $item->dateStart;
+            $Event->end = date('Y-m-d',strtotime($item->dateEnd)+86400);
+        }
     }
-    if ($item->dow!=='0'){
+    if (!empty($item->dow)){
         $Event->dow = explode(",", $item->dow);
     }
     $Event->color = Category::findOne($course['id_cat'])['color'];
@@ -45,10 +49,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="col-lg-8 col-lg-offset-2" style="padding-top:20px;">
   <?= \yii2fullcalendar\yii2fullcalendar::widget([
-        'options' => [
+      'options' => [
         'lang' => 'ru',
 
         //... more options to be defined here!
+      ],
+      'clientOptions'=>[
+          'timeFormat'=> 'H:mm'
       ],
 
     'header'=> [
@@ -58,6 +65,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ],
       'theme'=>true,
       'events'=> $events,
+      
   ]);
   ?>
 </div>

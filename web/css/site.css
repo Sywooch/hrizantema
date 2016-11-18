@@ -166,8 +166,9 @@ h3.hilight {
     border:0px;
 }
 
-.navbar-form2 button {
-    margin:-7px;
+li.my-form a{
+    padding-top:8px;
+    padding-bottom:0px;
 }
 
 .carousel-caption {
@@ -283,4 +284,13 @@ a.not-hover:hover {
 li.menu-not-padding a{
     padding-top:3px;
     padding-bottom:0px;
+}
+
+.myEvent .fc-content{
+    cursor:hand;
+    cursor:pointer;
+}
+
+.modal-dialog{
+    margin-top:100px;
 }

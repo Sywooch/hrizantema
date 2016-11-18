@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [   
                 'attribute' => 'name',
                 'format' => 'ntext',
-                'label' => 'Имя',
+                'label' => 'Наименование',
             ],
             [   
                 'attribute' => 'id_cat',
@@ -71,12 +71,12 @@ $this->params['breadcrumbs'][] = $this->title;
             [   
                 'attribute' => 'duration',
                 'format' => 'raw',
-                'label' => 'Продолжительность',
+                'label' => 'Продолжительность,ч',
             ],                   
             [   
                 'attribute' => 'price',
                 'format' => 'raw',
-                'label' => 'Цена',
+                'label' => 'Цена,р',
             ],           
             // 'date',
 
