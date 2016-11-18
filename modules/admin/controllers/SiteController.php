@@ -46,21 +46,36 @@ class SiteController extends Controller
      */
     public function actionQuest()
     {
-        return $this->render('quest');
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            return $this->render('quest');
+        }
+    }
+    
+    public function actionIndex()
+    {
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            return $this->render('index');
+        }
     }
     
     public function actionCourse()
     {
-        return $this->render('course');
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            return $this->render('course');
+        }
     }
 
     public function actionCategories()
     {
-        return $this->render('categories');
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            return $this->render('categories');
+        }
     }
     
     public function actionTiming()
     {
-        return $this->render('timing');
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            return $this->render('timing');
+        }
     }  
 }

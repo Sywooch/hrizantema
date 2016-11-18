@@ -36,13 +36,15 @@ class CourseController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CourseSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $searchModel = new CourseSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }
     }
 
     /**
@@ -52,12 +54,14 @@ class CourseController extends Controller
      */
     public function actionView($id)
     {
-       $model = $this->findModel($id);
- 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('view', ['model' => $model]);
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $model = $this->findModel($id);
+
+             if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                 return $this->redirect(['view', 'id' => $model->id]);
+             } else {
+                 return $this->render('view', ['model' => $model]);
+             }
         }
     }
 
@@ -68,14 +72,16 @@ class CourseController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Course();
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $model = new Course();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
 
@@ -87,14 +93,16 @@ class CourseController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
 
@@ -106,8 +114,10 @@ class CourseController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-        return $this->redirect(['index']);
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $this->findModel($id)->delete();
+            return $this->redirect(['index']);
+        }
     }
 
     /**
@@ -119,10 +129,12 @@ class CourseController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Course::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('Запрашиваемая страница не существует!');
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            if (($model = Course::findOne($id)) !== null) {
+                return $model;
+            } else {
+                throw new NotFoundHttpException('Запрашиваемая страница не существует!');
+            }
         }
     }
 }

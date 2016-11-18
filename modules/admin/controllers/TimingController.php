@@ -35,12 +35,14 @@ class TimingController extends Controller
      */
     public function actionIndex()
     {
-        $model = new Timing();
-        $data = $model->find()->all();
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $model = new Timing();
+            $data = $model->find()->all();
 
-        return $this->render('index', [
-            'data' => $data,
-        ]);
+            return $this->render('index', [
+                'data' => $data,
+            ]);
+        }
     }
 
     /**
@@ -50,12 +52,14 @@ class TimingController extends Controller
      */
     public function actionView($id)
     {
-       $model = $this->findModel($id);
- 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('view', ['model' => $model]);
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $model = $this->findModel($id);
+
+             if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                 return $this->redirect(['view', 'id' => $model->id]);
+             } else {
+                 return $this->render('view', ['model' => $model]);
+             }
         }
     }
 
@@ -66,14 +70,16 @@ class TimingController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Timing();
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $model = new Timing();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['index']);
+            } else {
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
 
@@ -85,14 +91,16 @@ class TimingController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['index']);
+            } else {
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
 
@@ -104,8 +112,10 @@ class TimingController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-        return $this->redirect(['index']);
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            $this->findModel($id)->delete();
+            return $this->redirect(['index']);
+        }
     }
 
     /**
@@ -117,10 +127,12 @@ class TimingController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Timing::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('Запрашиваемая страница не существует!');
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            if (($model = Timing::findOne($id)) !== null) {
+                return $model;
+            } else {
+                throw new NotFoundHttpException('Запрашиваемая страница не существует!');
+            }
         }
     }
 }

@@ -123,6 +123,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'Контакты', 'url' => ['/site/contact']],
+            (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1')?['label' => 'Админка', 'url' => ['/admin']]:"",
             Yii::$app->user->isGuest ? (
                 ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
