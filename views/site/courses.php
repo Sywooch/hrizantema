@@ -80,10 +80,10 @@ foreach ($categories as $category) {
 if ($modelCat!==false) {
     if ($modelCourse==false) {
         $modelCourseId = false;
-        $this->registerJs("$('html, body').animate({ scrollTop: $('#category').offset().top-55 }, 1300); ");    
+        $this->registerJs("$('html, body').animate({ scrollTop: $('#category').offset().top-80 }, 1300); ");    
     } else {
         $modelCourseId = $modelCourse->id;
-        $this->registerJs("$('html, body').animate({ scrollTop: $('#course').offset().top-55 }, 1300); ");        
+        $this->registerJs("$('html, body').animate({ scrollTop: $('#course').offset().top-80 }, 1300); ");        
     }
     echo '<hr/><div class="caption_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-1" style="padding-top:10px;padding-bottom:10px;">'
             .'<a class="not-hover" id="category">'.$modelCat->name.'</a>'
