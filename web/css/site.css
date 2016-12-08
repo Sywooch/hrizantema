@@ -388,16 +388,21 @@ li.menu-not-padding a{
 
 .paddinged td div.circle_check {
     /*background-color:#dcb42c;*/
+    margin-left:0px;
+    width:20px;
+    height:20px;
     background:url('/images/hriz_small.png') no-repeat;
     background-size:contain;
 }
 
 .circle_check {
-    width:20px;
-    height:20px;
+    width:16px;
+    height:16px;
+    margin-left:2px;
     background-color:#DDEBF9;
-    border-radius:10px;
+    border-radius:8px;
 }
+
 
 .hover-cell:hover {
     color:#2e6da4;
