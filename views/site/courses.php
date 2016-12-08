@@ -193,7 +193,7 @@ if ($modelCourse!==false) {
         echo "<div class='col-lg-10 col-lg-offset-1 col-md-offset-1'>".$modelCourse->description."</div>";
         echo "<div class='col-lg-11 col-lg-offset-1 col-md-offset-1'><b>Длительность курса: <span class='duration'>".$modelCourse->duration."&nbsp;ч</span></b></div>";
         echo "<div class='col-lg-11 col-lg-offset-1 col-md-offset-1'><b>Цена: <span class='price'>".$modelCourse->price."&nbsp;р</span></b></div>";
-        echo "<div style='padding-top:10px;' class='col-lg-11 col-lg-offset-1 text-center'>".Html::button('Расписание курса',['class'=>'btn btn-success btn-outline','onclick'=>'$("#calendar").css("display","block");$(\'.fc-today-button\').click(); $(\'html, body\').animate({ scrollTop: $(\'#calendar\').offset().top }, 500);'])." ".Html::a('Подать заявку на обучение',['site/request','course'=>$modelCourse->id],['class'=>'btn btn-primary btn-outline'])."</div>";
+        echo "<div style='padding-top:10px;' class='col-lg-11 col-lg-offset-1 text-center'>".Html::button('Расписание курса',['class'=>'btn btn-success btn-outline','onclick'=>'$("#calendar2").css("display","block");$(\'.fc-today-button\').click(); $(\'html, body\').animate({ scrollTop: $(\'#calendar2\').offset().top }, 500);'])." ".Html::a('Подать заявку на обучение',['site/request','course'=>$modelCourse->id],['class'=>'btn btn-primary btn-outline'])."</div>";
 }
 
 
@@ -204,7 +204,7 @@ if ($modelCourse!==false) {
 
 <?php
 if ($modelCourse!==false) {
-    echo "<div id='calendar' style='display:none'>";
+    echo "<div id='calendar2' style='display:none'>";
     echo '<div class="caption_sub_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-1" style="padding-top:20px;padding-bottom:10px;">'
         .'<a class="not-hover" id="calendar">Расписание курса</a>'
     .'</div>'; 
