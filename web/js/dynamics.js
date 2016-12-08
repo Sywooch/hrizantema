@@ -80,6 +80,7 @@ $('#serviceList').on('shown.bs.collapse', function() {
   });
   
   function fillModal(id){
+      $('#btnRequest').html("<a class='btn btn-primary btn-outline' href='/site/request?calendar="+id+"'>Подать заявку на обучение</a>");
       $("#myModalHeader").html($('.hiddId'+id+' .hiddName').html());
       $("#hId").html($('.hiddId'+id+' .hiddIdCourse').html());
       if ($('.hiddId'+id+' .hiddDs').html()!==undefined){
@@ -89,9 +90,9 @@ $('#serviceList').on('shown.bs.collapse', function() {
       if ($('.hiddId'+id+' .hiddCategory').html()!==undefined){
         $strBody = $strBody+"<tr><td align=right valign=middle><b>Категория: </b></td><td>"+$('.hiddId'+id+' .hiddCategory').html()+"<br/></td></tr>";
       }
-      if ($('.hiddId'+id+' .hiddDescription').html()!==undefined){
-        $strBody = $strBody+"<tr><td align=right valign=middle><b>Описание: </b></td><td>"+$('.hiddId'+id+' .hiddDescription').html()+"<br/></td></tr>";
-      }
+      //if ($('.hiddId'+id+' .hiddDescription').html()!==undefined){
+      //  $strBody = $strBody+"<tr><td align=right valign=middle><b>Описание: </b></td><td>"+$('.hiddId'+id+' .hiddDescription').html()+"<br/></td></tr>";
+      //}
       $strBody = $strBody+"<tr><td align=right valign=middle ><b>Время проведения занятий: </b></td><td >"+$('.hiddId'+id+' .hiddPeriod').html()+"</td></tr>";
       $("#myModalBody").html($strBody);
       $("#myModal").modal("show");

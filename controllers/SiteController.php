@@ -10,6 +10,10 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\User;
 use app\models\Request;
+use app\models\Category;
+use app\models\Course;
+use app\models\Timing;
+use yii\data\ActiveDataProvider;
 
 class SiteController extends Controller
 {
@@ -80,8 +84,57 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->render('redirect');
         }
-        return $this->render('request',['modelRequest'=>$model]);
+        if (isset(Yii::$app->request->get()['course'])) {
+            $id_course = Yii::$app->request->get()['course'];
+            $modelCourse = Course::findOne($id_course);
+        } else {
+            $modelCourse = false;
+        }
+        if (isset(Yii::$app->request->get()['calendar'])) {
+            $id_calendar = Yii::$app->request->get()['calendar'];
+            $modelCalendar = Timing::findOne($id_calendar);
+        } else {
+            $modelCalendar = false;
+        }
+        return $this->render('request',['modelRequest'=>$model,'modelCourse'=>$modelCourse,'modelCalendar'=>$modelCalendar]);
+        
+    }
+    
+    public function actionCourses()
+    {
+        if (isset(Yii::$app->request->get()['id'])) {
+            $id_cat = Yii::$app->request->get()['id'];
+            $modelCat = Category::findOne($id_cat);
+        } else {
+            $id_cat = false;
+            $modelCat = false;
+        }
+        
+        if (isset(Yii::$app->request->get()['course'])) {
+            $id_course = Yii::$app->request->get()['course'];
+            $modelCourse = Course::findOne($id_course);
+        } else {
+            $id_course = false;
+            $modelCourse = false;
+        }  
+        
+        if ($id_cat!==false) {
+            $modelCourses = Course::find()->where(['id_cat'=>$id_cat]);
+            
+            
+            $provider = new ActiveDataProvider([
+            'query' => $modelCourses,
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+            ]);
+        } else {
+            $modelCourses = false;
+            $provider = false;
+        }
 
+
+        return $this->render('courses',['modelCat'=>$modelCat,'modelCourses'=>$modelCourses,'provider'=>$provider,'modelCourse'=>$modelCourse]);
     }
     /**
      * Login action.

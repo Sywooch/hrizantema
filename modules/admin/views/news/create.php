@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\News */
 
-$this->title = 'Создание новости';
-$this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['index']];
+$this->title = 'Создание мероприятия';
+$this->params['breadcrumbs'][] = ['label' => 'Мероприятия', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-create">

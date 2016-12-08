@@ -11,7 +11,7 @@ use yii\helpers\Url;
 /* @var $searchModel app\models\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Новости';
+$this->title = 'Мероприятия';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-index">
@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Создать новость', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать мероприятие', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'responsive'=>true,
         'hover'=>true,
         'layout'=>'{pager}{errors}{items}',
-        'emptyText'=>"Новости не найдены...",
+        'emptyText'=>"Мероприятия не найдены...",
 //        'panel'=>[
 //            'type'=>GridView::TYPE_PRIMARY,
 //            'heading'=>'Список',
@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
               'new_action1' => function ($url, $model) {
                   return Html::a('<span class="glyphicon glyphicon-trash"></span>', Url::toRoute(['news/delete','id'=>$model->id]), [
                               'title' => Yii::t('app', 'Удалить'),
-                              'data-confirm'=>"Вы действительно хотите удалить эту новость ?",
+                              'data-confirm'=>"Вы действительно хотите удалить это мероприятие ?",
                               'data-method' => 'post',
                               'data-pjax' => '1'
                   ]);

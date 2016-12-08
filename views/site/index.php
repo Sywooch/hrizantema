@@ -48,7 +48,7 @@ echo Carousel::widget([
 </div>
 <hr/>
 
-<div class="caption_my text-left">
+<div class="caption_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-2 col-xs-offset-2">
     <a class="not-hover" id="about">О НАС</a>
 </div>
 
@@ -64,8 +64,8 @@ echo Carousel::widget([
     
 
 
-<div class="caption_my text-left" style="padding-top:40px;padding-bottom:40px;">
-    <a class="not-hover" id="collective">КОЛЛЕКТИВ</a>
+<div class="caption_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-2 col-xs-offset-2" style="padding-top:40px;padding-bottom:40px;">
+    <div ><a class="not-hover" id="collective">КОЛЛЕКТИВ</a></div>
 </div> 
 
 <div style='display:flex'>

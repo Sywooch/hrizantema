@@ -15,12 +15,12 @@ use yii\bootstrap\Modal;
 /* @var $model app\models\News */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Мероприятия', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-view">
 
-    <h2>Просмотр и редактирование новости</h2>
+    <h2>Просмотр и редактирование мероприятия</h2>
 <?php
 $attributes = [
     [
@@ -47,7 +47,7 @@ $attributes = [
     ],
     [
         'group'=>true,
-        'label'=>'Наполнение новости',
+        'label'=>'Наполнение текстом',
         'rowOptions'=>['class'=>'info']
     ],
     [
@@ -147,7 +147,7 @@ $attributes = [
     'deleteOptions'=>[
         'url'=>['delete', 'id' => $model->id],
         'title'=>'Удалить',
-        'confirm'=>Yii::t('app', 'Вы действительно хотите удалить эту новость?'),
+        'confirm'=>Yii::t('app', 'Вы действительно хотите удалить это мероприятие?'),
     ],
     'updateOptions'=>[    
         'title'=>'Изменить'

@@ -46,7 +46,7 @@ use kartik\date\DatePicker;
     <?= $form->field($model, 'visible')->hiddenInput(['value'=>1])->label(false) ?>
 
     <div class="form-group text-center">
-        <?= Html::submitButton('Создать новость',['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Создать мероприятие',['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

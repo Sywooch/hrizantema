@@ -85,7 +85,7 @@ AppAsset::register($this);
     NavBar::begin([
         'brandOptions' => ['style'=>'','class'=>'visible-xs'],
         'brandLabel' => '<form class="" style="margin-top:-7px;">
-    <img id="myLabel2" style="float:left;margin-top:-5px;margin-left:-5px;padding-right:5px;" src=\''.Yii::$app->request->baseUrl.'/images/hriz4.png\' class=\'img-responsive\' /><button onclick=\'window.location.href=window.location.protocol+"//"+window.location.hostname+"/site/request"; return false;\' class="btn btn-primary btn-outline" type="submit">Записаться</button>
+    <img id="myLabel2" style="float:left;margin-top:-5px;margin-left:-5px;padding-right:5px;" src=\''.Yii::$app->request->baseUrl.'/images/hriz4.png\' class=\'img-responsive\' /><button onclick=\'window.location.href=window.location.protocol+"//"+window.location.hostname+"/site/courses"; return false;\' class="btn btn-primary btn-outline" type="submit">Курсы и расписание</button>
   </form>',
 
         'brandUrl' => Yii::$app->homeUrl,
@@ -138,10 +138,10 @@ AppAsset::register($this);
             ),
             ['label'=>''
                 .Html::button(
-                    'Записаться',
+                    'Курсы и расписание',
                     ['class' => 'btn btn-primary btn-outline','name'=>'request']
                 ),
-                'url'=>['request'],
+                'url'=>['courses'],
                 'encode'=>false,
                 'options'=>[
                     'class'=>'hidden-xs my-form'
