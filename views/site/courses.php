@@ -35,7 +35,7 @@ if ($modelCat!==false){
     $classMy = ($modelCat->id==$category->id)?"block-cat-select":"block-cat";
     echo "<div onClick=\"window.location.href='".Url::to(['site/courses','id'=>$category->id])."'\" align=center class='".$classMy." col-lg-2 col-md-2'><img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name."</div>"; 
 } else {   
-    echo "<div align=center class='block-cat col-lg-2 col-md-2'>".Html::a("<img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name,['courses','id'=>$category->id],['class'=>'not-hover','style'=>'color:inherit'])."</div>";
+    echo "<div onClick=\"window.location.href='".Url::to(['site/courses','id'=>$category->id])."'\" align=center class='block-cat col-lg-2 col-md-2'><img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name."</div>";
 }
 //echo "<div align=center  class='block-cat'><img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name."</div>";
 }
