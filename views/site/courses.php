@@ -33,9 +33,9 @@ $items = [];
 foreach ($categories as $category) {
 if ($modelCat!==false){
     $classMy = ($modelCat->id==$category->id)?"block-cat-select":"block-cat";
-    echo "<div onClick=\"window.location.href='".Url::to(['site/courses','id'=>$category->id])."'\" align=center class='".$classMy." col-lg-2 col-md-2'><img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name."</div>"; 
+    echo "<div onClick=\"window.location.href='".Url::to(['site/courses','id'=>$category->id])."'\" align=center class='".$classMy." col-lg-2 col-md-2' style='max-width:150px; mix-width:149px'><img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name."</div>"; 
 } else {   
-    echo "<div onClick=\"window.location.href='".Url::to(['site/courses','id'=>$category->id])."'\" align=center class='block-cat col-lg-2 col-md-2'><img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name."</div>";
+    echo "<div onClick=\"window.location.href='".Url::to(['site/courses','id'=>$category->id])."'\" align=center class='block-cat col-lg-2 col-md-2' style='max-width:150px; mix-width:149px'><img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name."</div>";
 }
 //echo "<div align=center  class='block-cat'><img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name."</div>";
 }
@@ -56,9 +56,9 @@ foreach ($categories as $category) {
     }
     if ($modelCat!==false){
         $classMy = ($modelCat->id==$category->id)?"block-cat-select":"block-cat";
-        echo "<div align=center class='".$classMy." col-sm-4 col-xs-5'>".Html::a("<img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name,['courses','id'=>$category->id],['class'=>'not-hover','style'=>'color:inherit'])."</div>"; 
+        echo "<div align=center class='".$classMy." col-sm-3 col-xs-4' style='max-width:150px;mix-width:149px'>".Html::a("<img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name,['courses','id'=>$category->id],['class'=>'not-hover','style'=>'color:inherit'])."</div>"; 
     } else {
-        echo "<div align=center  class='col-sm-4 col-xs-5 block-cat'>".Html::a("<img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name,['courses','id'=>$category->id],['class'=>'not-hover','style'=>'color:inherit'])."</div>";
+        echo "<div align=center  class='col-sm-3 col-xs-4 block-cat' style='max-width:150px;mix-width:149px'>".Html::a("<img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name,['courses','id'=>$category->id],['class'=>'not-hover','style'=>'color:inherit'])."</div>";
     }
 
     if ($counter%2 == 0 ) {

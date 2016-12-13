@@ -127,3 +127,65 @@ function disableCell(date, cell){
         }
     
 }
+
+function showWindow(id){
+    if ($('#button'+id).hasClass('checked')==false){
+        $('#window'+id).css('display','block');
+        //$('#window'+id).offset({top:$('#button'+id).offset().top+$('#button'+id).height(),left:$('#window'+id).offset().left});
+
+        $('#window'+id).fadeTo(300,1);
+        $('#button'+id).css('color','red');
+        $('#button'+id).css('text-decoration','underline');
+        $('#button'+id).addClass('checked');
+    } else {
+        $('#window'+id).fadeTo(300,0);
+        setTimeout(function(){$('#window'+id).css('display','none');},300);
+        $('#button'+id).css('color','');
+        $('#button'+id).css('text-decoration','none');
+        $('#button'+id).removeClass('checked');
+    }
+    id1='';
+    for (i = 1; i <= 4; i++) {
+        if (i!==id) {
+            if ($('#button'+i).hasClass('checked')==true){
+                id1 = i;
+                $('#window'+i).fadeTo(300,0);
+                setTimeout(function(){$('#window'+id1).css('display','none');},300);
+                $('#button'+i).css('color','');
+                $('#button'+i).css('text-decoration','none');
+                $('#button'+i).removeClass('checked');
+            }
+        }
+    }
+}
+
+function showWindow2(id){
+    if ($('#button2_'+id).hasClass('checked')==false){
+        $('#window2_'+id).css('display','block');
+        //$('#window'+id).offset({top:$('#button'+id).offset().top+$('#button'+id).height(),left:$('#window'+id).offset().left});
+
+        $('#window2_'+id).fadeTo(300,1);
+        $('#button2_'+id).css('color','red');
+        $('#button2_'+id).css('text-decoration','underline');
+        $('#button2_'+id).addClass('checked');
+    } else {
+        $('#window2_'+id).fadeTo(300,0);
+        setTimeout(function(){$('#window2_'+id).css('display','none');},300);
+        $('#button2_'+id).css('color','');
+        $('#button2_'+id).css('text-decoration','none');
+        $('#button2_'+id).removeClass('checked');
+    }
+    id1='';
+    for (i = 1; i <= 4; i++) {
+        if (i!==id) {
+            if ($('#button2_'+i).hasClass('checked')==true){
+                id1 = i;
+                $('#window2_'+i).fadeTo(300,0);
+                setTimeout(function(){$('#window2_'+id1).css('display','none');},300);
+                $('#button2_'+i).css('color','');
+                $('#button2_'+i).css('text-decoration','none');
+                $('#button2_'+i).removeClass('checked');
+            }
+        }
+    }
+}

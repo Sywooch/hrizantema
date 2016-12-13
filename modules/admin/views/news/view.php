@@ -10,6 +10,7 @@ use skeeks\yii2\ckeditor\CKEditorPresets;
 use mihaildev\ckeditor\CKEditor;
 use yii\helpers\ArrayHelper;
 use yii\bootstrap\Modal;
+use app\models\CategoryNews;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\News */
@@ -50,6 +51,14 @@ $attributes = [
         'label'=>'Наполнение текстом',
         'rowOptions'=>['class'=>'info']
     ],
+    [
+        'attribute'=>'type', 
+        'label'=>'Группа',
+        'format'=>'text',
+        'type'=>DetailView::INPUT_DROPDOWN_LIST,
+        'value'=>$model->categoryNews->name,
+        'items'=>ArrayHelper::map(CategoryNews::find()->all(), 'id', 'name')
+    ],    
     [
         'attribute'=>'title', 
         'label'=>'Заголовок',

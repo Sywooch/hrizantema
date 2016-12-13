@@ -9,6 +9,7 @@ use skeeks\yii2\ckeditor\CKEditorPresets;
 use mihaildev\ckeditor\CKEditor;
 use yii\helpers\ArrayHelper;
 use kartik\date\DatePicker;
+use app\models\CategoryNews;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\News */
@@ -18,6 +19,7 @@ use kartik\date\DatePicker;
 <div class="news-form">
 
     <?php $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
+    <?= $form->field($model, 'type')->dropDownList(ArrayHelper::map(CategoryNews::find()->all(), 'id', 'name'))->label('Группа') ?>
 
     <?= $form->field($model, 'title')->textInput() ?>
 

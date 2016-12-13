@@ -5,6 +5,7 @@ use yii\helpers\Html;
 use kartik\grid\GridView;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
+use yii\helpers\StringHelper;
 
 
 /* @var $this yii\web\View */
@@ -52,7 +53,26 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $content;
                 }
             ],
-            'short_text:html',
+            [
+                'attribute' => 'type',
+                'format' => 'raw',
+                'label' => 'Группа',
+                'contentOptions'=>function($data){
+                    return ['style'=>'background-color:'.$data->categoryNews->color];
+                },
+                'value' => function($data){
+        
+                    $content=$data->categoryNews->name;
+                    return $content;
+                }
+            ],
+            [
+                'format'=>'html',
+                'attribute' => 'short_text',
+                'value' => function ($model) {
+                return StringHelper::truncate($model->short_text, 300);
+                }
+            ],
             
             // 'date',
 

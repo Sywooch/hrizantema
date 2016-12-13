@@ -32,7 +32,7 @@ class News extends \yii\db\ActiveRecord
         return [
             [['title', 'text', 'date_news','visible','user_id'], 'required'],
             [['title', 'img', 'short_text', 'text'], 'string'],
-            [['date','date_news'], 'safe'],
+            [['date','date_news','type'], 'safe'],
         ];
     }
 
@@ -65,5 +65,9 @@ class News extends \yii\db\ActiveRecord
     
     public function getUser() {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+    
+    public function getCategoryNews() {
+        return $this->hasOne(CategoryNews::className(), ['id' => 'type']);
     }
 }

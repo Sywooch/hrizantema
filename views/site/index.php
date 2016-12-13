@@ -3,6 +3,10 @@
 use yii\bootstrap\Carousel;
 use amass\panel\Panel;
 use yii\helpers\Url;
+use kartik\popover\PopoverX;
+use app\models\News;
+use yii\bootstrap\Html;
+use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
 
@@ -44,9 +48,107 @@ echo Carousel::widget([
         ],
     ]
 ]);
+$blockNews = News::find()->where(['type'=>'1'])->all();
+$news = "";
+foreach ($blockNews as $new) {
+   $news = $news."<div class='news-block'>";
+   $news = $news.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/news','id'=>$new->id]);
+   $news = $news."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
+   $news = $news.Html::a($new->title,['site/news','id'=>$new->id],['class'=>'news-title']);
+   $news = $news."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
+   $news = $news."<div class='news-date'>Дата: ".date("d.m.Y",strtotime($new->date_news))."</div>";
+   $news = $news."</div>";
+   $news = $news."</div><hr/>";
+}
+$news = $news."<div class='news-under'>Все новости <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
+
+$blockNews2 = News::find()->where(['type'=>'2'])->all();
+$news2 = "";
+foreach ($blockNews2 as $new) {
+   $news2 = $news2."<div class='news-block'>";
+   $news2 = $news2.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/news','id'=>$new->id]);
+   $news2 = $news2."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
+   $news2 = $news2.Html::a($new->title,['site/news','id'=>$new->id],['class'=>'news-title']);
+   $news2 = $news2."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
+   $news2 = $news2."<div class='news-date'>Дата: ".date("d.m.Y",strtotime($new->date_news))."</div>";
+   $news2 = $news2."</div>";
+   $news2 = $news2."</div><hr/>";
+}
+$news2 = $news2."<div class='news-under'>Все акции <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
+       
+$blockNews3 = News::find()->where(['type'=>'3'])->all();
+$news3 = "";
+foreach ($blockNews3 as $new) {
+   $news3 = $news3."<div class='news-block'>";
+   $news3 = $news3.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/news','id'=>$new->id]);
+   $news3 = $news3."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
+   $news3 = $news3.Html::a($new->title,['site/news','id'=>$new->id],['class'=>'news-title']);
+   $news3 = $news3."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
+   $news3 = $news3."<div class='news-date'>Дата: ".date("d.m.Y",strtotime($new->date_news))."</div>";
+   $news3 = $news3."</div>";
+   $news3 = $news3."</div><hr/>";
+}
+$news3 = $news3."<div class='news-under'>Все новинки <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
+ 
+
+$blockNews4 = News::find()->where(['type'=>'4'])->all();
+$news4 = "";
+foreach ($blockNews4 as $new) {
+   $news4 = $news4."<div class='news-block'>";
+   $news4 = $news4.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/news','id'=>$new->id]);
+   $news4 = $news4."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
+   $news4 = $news4.Html::a($new->title,['site/news','id'=>$new->id],['class'=>'news-title']);
+   $news4 = $news4."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
+   $news4 = $news4."<div class='news-date'>Дата: ".date("d.m.Y",strtotime($new->date_news))."</div>";
+   $news4 = $news4."</div>";
+   $news4 = $news4."</div><hr/>";
+}
+$news4 = $news4."<div class='news-under'>Все скидки <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
+ 
+        
+        
+        
+        
 ?>
+
 </div>
 <hr/>
+
+
+<div class="block-news hidden-xs "> 
+    <div class="news-capt text-warning col-lg-3 col-md-3 col-sm-3 " style="padding:0px;" id='button1' onclick='showWindow(1);'><span style="height:26px;display:block; float:right; border-right:1px solid #d9534f; margin-top:12px;"></span>Новости&nbsp;<span style="font-size:10pt" class="glyphicon glyphicon-triangle-bottom"></span></div>
+    <div class="news-capt text-info col-lg-3 col-md-3 col-sm-3" style="padding:0px;" id='button2' onclick='showWindow(2);'><span style="height:26px;display:block; float:right; border-right:1px solid #d9534f; margin-top:12px;"></span>Акции&nbsp;<span style="font-size:10pt" class="glyphicon glyphicon-triangle-bottom"></span></div>
+    <div class="news-capt text-primary col-lg-3 col-md-3 col-sm-3" style="padding:0px;" id='button3' onclick='showWindow(3);'><span style="height:26px;display:block; float:right; border-right:1px solid #d9534f; margin-top:12px;"></span>Новинки&nbsp;<span style="font-size:10pt" class="glyphicon glyphicon-triangle-bottom"></span></div>
+    <div class="news-capt text-error col-lg-3 col-md-3 col-sm-3" style="padding:0px;" id='button4' onclick='showWindow(4);'>Скидки&nbsp;<span style="font-size:10pt" class="glyphicon glyphicon-triangle-bottom"></span></div>
+</div>
+
+<div class="hidden-xs "> 
+    <div class=" col-lg-8 col-lg-offset-0 col-md-offset-1  window1" id='window1'><?=$news?></div>
+    <div class=" col-lg-8 col-lg-offset-1 col-md-offset-1  window1" id='window2'><?=$news2?></div>
+    <div class=" col-lg-8 col-lg-offset-2 col-md-offset-1  window1" id='window3'><?=$news3?></div>
+    <div class=" col-lg-8 col-lg-offset-3 col-md-offset-1  window1" id='window4'><?=$news4?></div>
+</div>
+
+<div class="block-news2 hidden-lg hidden-md hidden-sm"> 
+    <div class="news-capt text-info col-xs-6" id='button2_1' onclick='showWindow2(1);'><span style="height:26px;display:block; float:right; border-right:1px solid #d9534f; margin-top:12px;"></span>Новости&nbsp;<span style="font-size:10pt" class="glyphicon glyphicon-triangle-bottom"></span></div>
+    <div class="news-capt text-info col-xs-6" id='button2_2' onclick='showWindow2(2);'>Акции&nbsp;<span style="font-size:10pt" class="glyphicon glyphicon-triangle-bottom"></span></div>
+
+    <hr style="width:80%;"/>
+        <div style='margin-top:-20px;'>
+            <div class=" col-xs-11 window1" id='window2_1'><?=$news?></div>
+            <div class=" col-xs-11 window1" id='window2_2'><?=$news2?></div>
+        </div>
+    <div class="news-capt text-info col-xs-6" id='button2_3' onclick='showWindow2(3);'><span style="height:26px;display:block; float:right; border-right:1px solid #d9534f; margin-top:12px;"></span>Новинки&nbsp;<span style="font-size:10pt" class="glyphicon glyphicon-triangle-bottom"></span></div>
+    <div class="news-capt text-info col-xs-6" id='button2_4' onclick='showWindow2(4);'>Скидки&nbsp;<span style="font-size:10pt" class="glyphicon glyphicon-triangle-bottom"></span></div>
+
+</div>
+<div class="hidden-lg hidden-md hidden-sm"> 
+        <div class=" col-xs-11 window1" id='window2_3'><?=$news3?></div>
+        <div class=" col-xs-11 window1" id='window2_4'><?=$news4?></div>
+</div>
+
+
+<hr style="width:100%">
 
 <div class="caption_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-2 col-xs-offset-2">
     <a class="not-hover" id="about">О НАС</a>
@@ -54,6 +156,9 @@ echo Carousel::widget([
 
     
  <?php
+ $this->registerJs(""
+    .'$("[data-toggle=\'popover-x\']").popoverX();'
+."");
  include(__DIR__.'/menu1_lg.php');
  
  include(__DIR__.'/menu1_xs.php');
