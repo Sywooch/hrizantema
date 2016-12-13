@@ -156,8 +156,25 @@ $news4 = $news4."<div class='news-under'>Все скидки <span style='font-s
 
     
  <?php
- $this->registerJs(""
-    .'$("[data-toggle=\'popover-x\']").popoverX();'
+ $this->registerJs("$(function(){
+  $(document).click(function(event) {
+    if ($(event.target).closest(\".window1\").length) return;
+    if ($(event.target).closest(\".news-capt\").length) return;
+        for (i = 1; i <= 4; i++) {
+
+            if ($('#button'+i).hasClass('checked')==true){
+                id1 = i;
+                $('#window'+i).fadeTo(300,0);
+                setTimeout(function(){ $('#window'+id1).css('display','none');},300);
+                $('#button'+i).css('color','');
+                $('#button'+i).css('text-decoration','none');
+                $('#button'+i).removeClass('checked');
+            }
+        
+    }
+    event.stopPropagation();
+  });
+});"
 ."");
  include(__DIR__.'/menu1_lg.php');
  
