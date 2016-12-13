@@ -76,7 +76,7 @@ foreach ($blockNews2 as $new) {
 }
 $news2 = $news2."<div class='news-under'>Все акции <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
        
-$blockNews3 = News::find()->where(['type'=>'3'])->all();
+$blockNews3 = News::find()->where(['type'=>'5'])->all();
 $news3 = "";
 foreach ($blockNews3 as $new) {
    $news3 = $news3."<div class='news-block'>";
@@ -91,7 +91,7 @@ foreach ($blockNews3 as $new) {
 $news3 = $news3."<div class='news-under'>Все новинки <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
  
 
-$blockNews4 = News::find()->where(['type'=>'4'])->all();
+$blockNews4 = News::find()->where(['type'=>'6'])->all();
 $news4 = "";
 foreach ($blockNews4 as $new) {
    $news4 = $news4."<div class='news-block'>";

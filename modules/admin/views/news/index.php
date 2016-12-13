@@ -58,7 +58,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'label' => 'Группа',
                 'contentOptions'=>function($data){
-                    return ['style'=>'background-color:'.$data->categoryNews->color];
+                    
+                        return ['style'=>'background-color:'.$data->categoryNews->color];
+                    
                 },
                 'value' => function($data){
         
