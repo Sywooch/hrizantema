@@ -17,21 +17,21 @@ class UserController extends Controller {
     {   
         $model = new User();
         if ($model->load(Yii::$app->request->post())&& $model->validate()){
-            Yii::info('Создание пользователя (проверка заполнения прошла успешно) '.$model->name,__METHOD__);
+            Yii::info('Создание пользователя (проверка заполнения прошла успешно) '.$model->username,__METHOD__);
             if ($model->save()){
-                Yii::info('Создание пользователя (сохранение в БД) '.$model->name,__METHOD__);
+                Yii::info('Создание пользователя (сохранение в БД) '.$model->username,__METHOD__);
                 /*
                 создаем веб-доступную директорию с именем идентификатора пользователя для хранения видео с именами хешей, для просмотра
                 */
                 //FileHelper::createDirectory(Yii::getAlias('@app').'/web/files/pre-actions/'.$model->id); 
     
-                $mes = 'Пользователь '.$model->name.' успешно зарегистрирован. Для активации Вашей учетной записи на e-mail: '.$model->email.' отправлено письмо с кодом активации. Срок действия кода активации - 15 дней с момента регистрации.';
+                $mes = 'Пользователь '.$model->username.' успешно зарегистрирован. Для активации Вашей учетной записи на e-mail: '.$model->email.' отправлено письмо с кодом активации. Срок действия кода активации - 15 дней с момента регистрации.';
                 return $this->render('regSuccess',[
                     'model' => $model,
                     'message'=>$mes
                 ]);
             } else {
-                Yii::info('Создание пользователя (Ошибка сохранения в БД) '.$model->name.' '.implode(",", $model->getFirstErrors()),__METHOD__);
+                Yii::info('Создание пользователя (Ошибка сохранения в БД) '.$model->username.' '.implode(",", $model->getFirstErrors()),__METHOD__);
                 return $this->render('regError',[
                     'errors' => $model->getFirstErrors(),
                 ]);
@@ -50,7 +50,7 @@ class UserController extends Controller {
         $model = new ConfirmUser();
         $model->verificationHash=Yii::$app->request->get('verificationHash');
         if ($confirmUser=$model->confirm()) {
-            Yii::info('Подтверждение уч. записи пользователя '.$model->name.' успешно завершено!',__METHOD__);
+            Yii::info('Подтверждение уч. записи пользователя '.$model->username.' успешно завершено!',__METHOD__);
             return $this->render('confirmSuccess',[
             'model' => $confirmUser,
             ]);            
@@ -158,7 +158,7 @@ class UserController extends Controller {
             $user_old = $user_old->findOne($user->idhidd);
             $user_old->password = md5($user->password, false);
             $kk = $user_old->save(false);
-            Yii::info('Пользователь '.$user_old->name.' успешно сменил пароль своей уч. записи!',__METHOD__);
+            Yii::info('Пользователь '.$user_old->username.' успешно сменил пароль своей уч. записи!',__METHOD__);
             $mes = "Пароль успешно изменен!<br/>".Html::a('Войти', Url::to(["site/login"],true),['class'=>'btn btn-info']);;
             return $this->render('regSuccess',[
                         'message'=>$mes
