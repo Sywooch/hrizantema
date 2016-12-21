@@ -278,10 +278,10 @@ if ($modelCourse!==false) {
             }
 
             if ($item->allDay=='0'){
-                $hiddper = ($item->dow=='0')?$dateStart.$timeStart."<br/>".$dateEnd.$timeEnd:"По дням:".$dows." ".$dateStart.$timeStart.$dateEnd.$timeEnd;
+                $hiddper = ($item->dow=='0')?$dateStart.$timeStart."<br/>".$dateEnd.$timeEnd:" По дням: ".$dows." ".$dateStart.$timeStart.$dateEnd.$timeEnd;
                 echo "<span class='hiddPeriod'>".$hiddper."</span>";
             } else {
-                $hiddper = ($item->dow=='0')?$dateStart."</br>".$dateEnd.". Весь день</span>":"По дням недели: ".$dows.". Весь день</span>";
+                $hiddper = ($item->dow=='0')?$dateStart."</br>".$dateEnd.". Весь день</span>":" По дням недели: ".$dows.". Весь день</span>";
                 echo "<span class='hiddPeriod'>".$hiddper;
             }
         echo "</div>";
@@ -296,7 +296,7 @@ if ($modelCourse!==false) {
           //$('#popa".$course->id."').click();
         $Event = new \yii2fullcalendar\models\Event();
         $Event->id = $item->id;
-        $Event->title = "<span id='idTitle".$item->id."'>".$course['name']."</span>";
+        $Event->title = $course['name'];
         if ($item->allDay=='0') {
             if (empty($item->dow)){
                 $Event->start = date('Y-m-d\TH:i:s\Z',strtotime($item->dateStart." ".$item->timeStart));

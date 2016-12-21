@@ -24,31 +24,31 @@ echo Carousel::widget([
     'items' => [
         [
             'content' => '<img  src="'.Yii::getAlias('@web').'/images/slider/vizazhist11.jpg"/>',
-            'caption' => '<div class="hidden-xs hidden-sm"><h2>Обучайся новому</h2><h4>Базовые курсы и дополнительное образование к основному <a href="">"Визажист"</a></h4></div>'
-            .'<div class="hidden-lg hidden-md"><h4>Обучайся новому</h4><h5>Базовые курсы и дополнительное образование к основному <a href="">"Визажист"</a></h5></div>',
+            'caption' => '<div class="hidden-xs hidden-sm"><h2>Обучайся новому</h2><h4>Базовые курсы и дополнительное образование к основному <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>15]).'">"Визажист"</a></h4></div>'
+            .'<div class="hidden-lg hidden-md"><h4>Обучайся новому</h4><h5>Базовые курсы и дополнительное образование к основному <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>15]).'">"Визажист"</a></h5></div>',
             
         ],
         [
             'content' => '<img src="'.Yii::getAlias('@web').'/images/slider/parikmaker11.jpg"/>',
-            'caption' => '<div class="hidden-xs hidden-sm"><h2>Приобретай полезные навыки</h2><h4>Курсы <a href="">"Сам себе парихмахер"</a> и <a href="">"Сам себе визажист"</a> <br/>для самообразования</h4></div>'
-            .'<div class="hidden-lg hidden-md"><h4>Приобретай полезные навыки</h4><h5>Курсы <a href="">"Сам себе парихмахер"</a> и <a href="">"Сам себе визажист"</a> <br/>для самообразования</h5></div>',
+            'caption' => '<div class="hidden-xs hidden-sm"><h2>Приобретай полезные навыки</h2><h4>Курсы <a href="'.Url::toRoute(['site/courses','id'=>5,'course'=>23]).'">"Сам себе парихмахер"</a> и <a href="'.Url::toRoute(['site/courses','id'=>5,'course'=>26]).'">"Сам себе визажист"</a> <br/>для самообразования</h4></div>'
+            .'<div class="hidden-lg hidden-md"><h4>Приобретай полезные навыки</h4><h5>Курсы <a href="'.Url::toRoute(['site/courses','id'=>5,'course'=>23]).'">"Сам себе парихмахер"</a> и <a href="'.Url::toRoute(['site/courses','id'=>5,'course'=>26]).'">"Сам себе визажист"</a> <br/>для самообразования</h5></div>',
             'options' => [],
         ],
         [
             'content' => '<img src="'.Yii::getAlias('@web').'/images/slider/manikur11.jpg"/>',
-            'caption' => '<div class="hidden-xs hidden-sm"><h2>Получай современное образование</h2><h4>Программы обучения <a href="">"Мастер маникюра"</a>, <a href="">"Мастер педикюра"</a> и <a href="">"Основы художественной росписи"</a></h4></div>'
-            .'<div class="hidden-lg hidden-md"><h4>Получай современное образование</h4><h5>Программы обучения <a href="">"Мастер маникюра"</a>, <a href="">"Мастер педикюра"</a> и <a href="">"Основы художественной росписи"</a></h5></div>',
+            'caption' => '<div class="hidden-xs hidden-sm"><h2>Получай современное образование</h2><h4>Программы обучения <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>16]).'">"Мастер маникюра"</a>, <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>16]).'">"Мастер педикюра"</a> и <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>18]).'">"Основы художественной росписи"</a></h4></div>'
+            .'<div class="hidden-lg hidden-md"><h4>Получай современное образование</h4><h5>Программы обучения <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>16]).'">"Мастер маникюра"</a>, <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>16]).'">"Мастер педикюра"</a> и <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>18]).'">"Основы художественной росписи"</a></h5></div>',
             'options' => [],
         ],
         [
             'content' => '<img src="'.Yii::getAlias('@web').'/images/slider/parikmaker22.jpg"/>',
-            'caption' => '<div class="hidden-xs hidden-sm"><h2>Изучай дополнительные профессии</h2><h4>Профессиональные курсы <a href="">"Парикмахер-модельер"</a>,<a href="">"Колорист"</a>,<a href="">"Свадебный стилист"</a> и другие</h4></div>'
-            .'<div class="hidden-lg hidden-md"><h4>Изучай дополнительные профессии</h4><h5>Профессиональные курсы <a href="">"Парикмахер-модельер"</a>,<a href="">"Колорист"</a>,<a href="">"Свадебный стилист"</a> и другие</h5></div>',
+            'caption' => '<div class="hidden-xs hidden-sm"><h2>Изучай дополнительные профессии</h2><h4>Профессиональные курсы <a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>10]).'">"Парикмахер-модельер"</a>,<a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>8]).'">"Колорист"</a>,<a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>14]).'">"Свадебный стилист"</a> и другие</h4></div>'
+            .'<div class="hidden-lg hidden-md"><h4>Изучай дополнительные профессии</h4><h5>Профессиональные курсы <a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>10]).'">"Парикмахер-модельер"</a>,<a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>8]).'">"Колорист"</a>,<a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>14]).'">"Свадебный стилист"</a> и другие</h5></div>',
             'options' => [],
         ],
     ]
 ]);
-$blockNews = News::find()->where(['type'=>'1'])->all();
+$blockNews = News::find()->where(['type'=>'1'])->orderBy('date_news DESC')->limit(3)->all();
 $news = "";
 foreach ($blockNews as $new) {
    $news = $news."<div class='news-block'>";
@@ -60,50 +60,50 @@ foreach ($blockNews as $new) {
    $news = $news."</div>";
    $news = $news."</div><hr/>";
 }
-$news = $news."<div class='news-under'>Все новости <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
+$news = $news."<div onClick=\"window.location.href='".Url::to(['site/news'])."'\" class='news-under'>Все новости <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
 
-$blockNews2 = News::find()->where(['type'=>'2'])->all();
+$blockNews2 = News::find()->where(['type'=>'2'])->orderBy('date_news DESC')->limit(3)->all();
 $news2 = "";
 foreach ($blockNews2 as $new) {
    $news2 = $news2."<div class='news-block'>";
-   $news2 = $news2.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/news','id'=>$new->id]);
+   $news2 = $news2.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/stocks','id'=>$new->id]);
    $news2 = $news2."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
-   $news2 = $news2.Html::a($new->title,['site/news','id'=>$new->id],['class'=>'news-title']);
+   $news2 = $news2.Html::a($new->title,['site/stocks','id'=>$new->id],['class'=>'news-title']);
    $news2 = $news2."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
    $news2 = $news2."<div class='news-date'>Дата: ".date("d.m.Y",strtotime($new->date_news))."</div>";
    $news2 = $news2."</div>";
    $news2 = $news2."</div><hr/>";
 }
-$news2 = $news2."<div class='news-under'>Все акции <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
+$news2 = $news2."<div onClick=\"window.location.href='".Url::to(['site/stocks'])."'\" class='news-under'>Все акции <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
        
-$blockNews3 = News::find()->where(['type'=>'5'])->all();
+$blockNews3 = News::find()->where(['type'=>'5'])->orderBy('date_news DESC')->limit(3)->all();
 $news3 = "";
 foreach ($blockNews3 as $new) {
    $news3 = $news3."<div class='news-block'>";
-   $news3 = $news3.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/news','id'=>$new->id]);
+   $news3 = $news3.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/latest','id'=>$new->id]);
    $news3 = $news3."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
-   $news3 = $news3.Html::a($new->title,['site/news','id'=>$new->id],['class'=>'news-title']);
+   $news3 = $news3.Html::a($new->title,['site/latest','id'=>$new->id],['class'=>'news-title']);
    $news3 = $news3."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
    $news3 = $news3."<div class='news-date'>Дата: ".date("d.m.Y",strtotime($new->date_news))."</div>";
    $news3 = $news3."</div>";
    $news3 = $news3."</div><hr/>";
 }
-$news3 = $news3."<div class='news-under'>Все новинки <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
+$news3 = $news3."<div onClick=\"window.location.href='".Url::to(['site/latest'])."'\" class='news-under'>Все новинки <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
  
 
-$blockNews4 = News::find()->where(['type'=>'6'])->all();
+$blockNews4 = News::find()->where(['type'=>'6'])->orderBy('date_news DESC')->limit(3)->all();
 $news4 = "";
 foreach ($blockNews4 as $new) {
    $news4 = $news4."<div class='news-block'>";
-   $news4 = $news4.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/news','id'=>$new->id]);
+   $news4 = $news4.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/discounts','id'=>$new->id]);
    $news4 = $news4."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
-   $news4 = $news4.Html::a($new->title,['site/news','id'=>$new->id],['class'=>'news-title']);
+   $news4 = $news4.Html::a($new->title,['site/discounts','id'=>$new->id],['class'=>'news-title']);
    $news4 = $news4."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
    $news4 = $news4."<div class='news-date'>Дата: ".date("d.m.Y",strtotime($new->date_news))."</div>";
    $news4 = $news4."</div>";
-   $news4 = $news4."</div><hr/>";
+   $news4 = $news4."</div><hr />";
 }
-$news4 = $news4."<div class='news-under'>Все скидки <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
+$news4 = $news4."<div onClick=\"window.location.href='".Url::to(['site/discounts'])."'\" class='news-under'>Все скидки <span style='font-size:11pt;' class='glyphicon glyphicon-arrow-right'></span></div>";
  
         
         
@@ -112,7 +112,7 @@ $news4 = $news4."<div class='news-under'>Все скидки <span style='font-s
 ?>
 
 </div>
-<hr/>
+<hr />
 
 
 <div class="block-news hidden-xs "> 
@@ -148,7 +148,11 @@ $news4 = $news4."<div class='news-under'>Все скидки <span style='font-s
 </div>
 
 
-<hr style="width:100%">
+
+
+<div class="col-lg-12 col-xs-12 text-center">
+    <img class="img-responsive" style="margin:0 auto; padding-top:10px;padding-bottom:10px" src='<?=Yii::getAlias('@web')?>/images/title-tag4.png'/>
+</div>    
 
 <div class="caption_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-2 col-xs-offset-2">
     <a class="not-hover" id="about">О НАС</a>

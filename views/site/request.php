@@ -67,7 +67,10 @@ $this->params['breadcrumbs'][] = $this->title;
         }
         $course = Course::findOne($modelCalendar->id_course);
         $this->registerJs("$('select#request-course').val(".$course->id.");");
-    }  
+    } 
+    if (!Yii::$app->user->isGuest) {
+        $this->registerJs("$('#request-name').val('".Yii::$app->user->identity->namefull."');"); 
+    }
     
     
     

@@ -74,7 +74,7 @@ $this->title = "Контакты";
 
  
  <div class="bs-callout bs-callout-primary"><h4 >Режим работы:</h4><p> Понедельник - суббота<br/>с 10<sup> 00</sup> до 16<sup> 00</sup></p></div>
- <div class="bs-callout bs-callout-primary"><h4>Телефоны, e&#8209;mail:</h4> <span class="glyphicon glyphicon-phone-alt"></span> +7 (4722) 72-00-75<br/>
+ <div class="bs-callout bs-callout-primary"><h4><a class="not-hover" id="address">Телефоны, e&#8209;mail:</a></h4> <span class="glyphicon glyphicon-phone-alt"></span> +7 (4722) 72-00-75<br/>
  <span class="glyphicon glyphicon-phone"></span> +7-909-202-08-24<br/>
  <span class="glyphicon glyphicon-envelope"></span> trav.oks@yandex.ru</div>
 

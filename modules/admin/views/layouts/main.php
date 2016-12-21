@@ -51,6 +51,7 @@ AppAsset::register($this);
                 ]
             ],  
             ['label' => 'Заявки', 'url' => ['/admin/site/order']],
+            ['label' => 'Комментарии', 'url' => ['/admin/comments/index']],
         ],
     ]);
     
@@ -61,7 +62,7 @@ AppAsset::register($this);
             '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
                 . Html::submitButton(
-                    'Выйти (' . Yii::$app->user->identity->name . ')',
+                    'Выйти (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'btn btn-link']
                 )
                 . Html::endForm()

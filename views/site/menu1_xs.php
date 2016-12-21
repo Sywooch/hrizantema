@@ -94,7 +94,7 @@ use yii\helpers\Url;
             'style'=>'margin-bottom:0px; height:100%;'
         ],
          'headerTitle' => '<b>Широкий выбор профессий</b>', // Title text can use tag
-         'content' => 'За период существования центра разработано много программ обучения, в числе которых программы повышения квалификации, дополнительного проф. образования и свободные курсы. Наше <a href="">расписание</a>', // some content in body
+         'content' => 'За период существования центра разработано много программ обучения, в числе которых программы повышения квалификации, дополнительного проф. образования и свободные курсы. Наше <a href="'.Url::to(['courses']).'">расписание</a>', // some content in body
          'footer' => false, // show footer or false not showing
          'type' => true, // get style for panel \amass\panel::TYPE_DEFAULT  default
 ]); 
@@ -110,7 +110,7 @@ use yii\helpers\Url;
             'style'=>'height:100%;'
         ],
          'header'=>false,
-         'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="'.Yii::getAlias('@web').'/images/planet.png"></div>',  
+         'content' => '<div style="display:table-cell;vertical-align:middle;"><img class="img-responsive" src="'.Yii::getAlias('@web').'/images/career.png"></div>',  
          'footer' => false, // show footer or false not showing
          'type' => true, // get style for panel \amass\panel::TYPE_DEFAULT  default
 ]); 
@@ -123,8 +123,8 @@ use yii\helpers\Url;
             'class'=>'panel panel-info vertical-panel-right',
             'style'=>'margin-bottom:0px;height:100%;'
         ],
-         'headerTitle' => '<b>Ориентация на клиента</b>', // Title text can use tag
-         'content' => 'Наше обучение доступно каждому. Обучаясь у нас, мастера повысят свой навык, другие получат образование и устроятся на работу, приносящую хороший доход. Нашими услугами также могут воспользоваться те, кто просто хочет самосовершенствоваться для себя. Список программ обучения <a href="">здесь</a>', // some content in body
+         'headerTitle' => '<b>Гарантия трудоустройства</b>', // Title text can use tag
+         'content' => 'Мы гарантируем трудоустройство КАЖДОМУ, кто пройдет обучение. Профессии, которым Вы можете обучиться в нашем образовательном центре, востребованы на рынке вакансий, а некоторые даже в дефиците. Наш документ об образовании дает возможность устроиться на работу, приносящую хороший доход. Качество получаемых знаний и навыков гарантирует карьерный рост в выбранной сфере', // some content in body
          'footer' => false, // show footer or false not showing
          'type' => true, // get style for panel \amass\panel::TYPE_DEFAULT  default
 ]); 

@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
    ?>
 
-        <?= $form->field($model, 'name')->label('Логин') ?>
+        <?= $form->field($model, 'username')->label('Логин') ?>
         <?= $form->field($model, 'email')->label('E-mail') ?>
         <?= $form->field($model, 'password')->passwordInput()->label('Пароль') ?>
         <?= $form->field($model, 'password_repeat')->passwordInput()->label('Повторите пароль') ?>

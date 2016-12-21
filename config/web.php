@@ -5,8 +5,11 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log','forum'],
     'modules' => [
+        'forum' => [
+        'class' => 'bizley\podium\Podium',
+        ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
         ],
@@ -14,7 +17,23 @@ $config = [
             'class' => 'app\modules\admin\Module',
             // ... other configurations for the module ...
         ],
+        'comment' => [
+            'class' => 'yii2mod\comments\Module',
+            // also you can use the `afterCreate` event as follows
+            'controllerMap' => [
+                'default' => [
+                    'class' => 'yii2mod\comments\controllers\DefaultController',
+                    'on afterCreate' => function ($event) {
+                        // get saved comment model
+                        $event->getCommentModel();
+                        // your custom code
+                    },
+                     
+                ]
+            ]
+        ]
     ],
+    'language' => 'ru',                        
     'controllerMap' => [
         'elfinder' => [
             'class' => 'mihaildev\elfinder\Controller',
@@ -74,6 +93,10 @@ $config = [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@eauth/messages',
                 ],
+                'yii2mod.comments' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@yii2mod/comments/messages',
+                ],
             ],
         ],
         'assetManager' => [
@@ -98,9 +121,12 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'site/index',
+                '<action>' => 'site/<action>',
                 'login/<service:google_oauth|facebook|yandex_oauth|vkontakte|odnoklassniki|mailru>' => 'site/login',
                  '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],
         ],

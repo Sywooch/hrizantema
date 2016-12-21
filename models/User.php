@@ -24,15 +24,16 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     public function rules() 
     {
         return [
-            [['name', 'password', 'email', 'password_repeat','captcha'], 'required', 'message' => 'Поле обязательно для заполнения'],
+            [['username', 'password', 'email', 'password_repeat','captcha'], 'required', 'message' => 'Поле обязательно для заполнения'],
             ['email', 'email', 'message' => 'Неправильно введен e-mail'],
-            ['name', 'string', 'min' => '6', 'max' => '32', 'tooShort' => 'Логин должен содержать не менее 6 символов', 'tooLong' => 'Логин должен содержать не более 32 символов'],
-            ['name', UserValidator::className()], //внешний валидатор имени пользователя через RegExp на допустимые символы и т.д. (как серверная так и клиентская)
+            ['username', 'string', 'min' => '6', 'max' => '32', 'tooShort' => 'Логин должен содержать не менее 6 символов', 'tooLong' => 'Логин должен содержать не более 32 символов'],
+            ['username', UserValidator::className()], //внешний валидатор имени пользователя через RegExp на допустимые символы и т.д. (как серверная так и клиентская)
             [['password','password_repeat'], 'string', 'min' => '5', 'max' => '32', 'tooShort' => 'Пароль должен содержать не менее 5 символов', 'tooLong' => 'Пароль должен содержать не более 32 символов'],
-            ['name','unique','message' => 'Пользователь с таким именем уже существует'],
+            ['username','unique','message' => 'Пользователь с таким именем уже существует'],
             ['email','unique','message' => 'Пользователь с таким email уже существует'],
             ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message'=>'Пароли должны быть равны'],
-            ['captcha','captcha','message'=>'Код с картинки введен неправильно']
+            ['captcha','captcha','message'=>'Код с картинки введен неправильно'],
+            ['namefull','safe']
             ];
     }
 
@@ -75,10 +76,11 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
         if (!$social) {
             $keyHash = md5(Yii::$app->params['key'], true);//ключ можно найти в параметрах пользователя params.php
             $part_str = "prorab-gid|";
-            $this->verificationHash = urlencode(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $keyHash, $part_str.$this->name, MCRYPT_MODE_ECB)));
+            $this->verificationHash = urlencode(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $keyHash, $part_str.$this->username, MCRYPT_MODE_ECB)));
             $message = $this->createMessage($this->verificationHash);
             if ($this->sendMailToUser($message,$this->email)){
                 date_default_timezone_set( 'Europe/Moscow' );//установка часового пояса для кооректности текущей даты
+                $this->namefull = $this->username;
                 $this->createTime=date("Y-m-d H:i:s");
                 $this->active=0;//пока что неактивированный
                 $this->accessToken=NULL;//ну примерно уникальный
@@ -92,6 +94,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
             }
         } else {
             date_default_timezone_set( 'Europe/Moscow' );//установка часового пояса для кооректности текущей даты
+            $this->namefull = $this->username;
             $this->createTime=date("Y-m-d H:i:s");
             $this->active=1;//пока что неактивированный
             $this->authKey=$this->id;//тоже примерно уникальный
@@ -142,7 +145,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     
     public static function findByUsername($username)
     {
-        return static::findOne(['name' => $username]);
+        return static::findOne(['username' => $username]);
     }
     
     public static function findByAuthKey($authKey)
@@ -158,7 +161,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
         $id = $service->getServiceName().'-'.$service->getId();
         $attributes = array(
             'id' => $id,
-            'name' => $service->getAttribute('name'),
+            'username' => $service->getAttribute('name'),
             'authKey' => md5($id),
             'profile' => $service->getAttributes(),
         );
@@ -191,5 +194,17 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
         $part_str = "prorab-gid|";
         $message = $this->createMessageChangePass(urlencode(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $keyHash, $part_str.$this->password, MCRYPT_MODE_ECB))));
         return $this->sendMailToUser($message,$this->email);
+    }
+    
+    public function getUsername() {
+        return $this->namefull;
+    }
+    
+    public function getAvatar() {
+        if (file_exists(Yii::getAlias('@app')."/web/".$this->img)&&($this->img!=="")) {
+            return $this->img;
+        } else {
+            return Yii::getAlias('@web')."/images/users/no_avatar.gif";
+        }
     }
 }

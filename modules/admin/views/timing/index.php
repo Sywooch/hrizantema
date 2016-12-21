@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     $Event = new \yii2fullcalendar\models\Event();
     $Event->id = $item->id;
     $course = Course::findOne($item->id_course);
-    $Event->title = "<span id=\"timing".$item->id."\">".$course['name']."</span>";
+    $Event->title = $course['name'];
     if ($item->allDay=='0') {
         if (empty($item->dow)){
             $Event->start = date('Y-m-d\TH:i:s\Z',strtotime($item->dateStart." ".$item->timeStart));

@@ -13,7 +13,10 @@ use app\models\Request;
 use app\models\Category;
 use app\models\Course;
 use app\models\Timing;
+use app\models\News;
 use yii\data\ActiveDataProvider;
+use app\models\File;
+use yii\helpers\Json;
 
 class SiteController extends Controller
 {
@@ -232,5 +235,129 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+    
+    public function actionGallery()
+    {
+        return $this->render('gallery');
+    }
+    
+    public function actionNews()
+    {
+        if (isset(Yii::$app->request->get()['id'])==true){
+            $model = News::findOne(Yii::$app->request->get()['id']);
+        } else {
+            $model = null;
+        }
+        if (($model!==null)&&($model->type==1)) {
+            $modelOther = News::find()->where(['<>','id',$model->id])->andWhere(['type'=>$model->type])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther2 = News::find()->where(['type'=>2])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther5 = News::find()->where(['type'=>5])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther6 = News::find()->where(['type'=>6])->orderBy('date_news DESC')->limit(3)->all();
+            return $this->render('news',['model'=>$model,'modelOther'=>$modelOther,'modelOther2'=>$modelOther2,'modelOther5'=>$modelOther5,'modelOther6'=>$modelOther6]);
+        } else {
+            $model = News::find()->where(['type'=>1])->orderBy('date_news DESC')->all();
+            return $this->render('news_all',['model'=>$model]);
+        }
+    }
+    
+    public function actionStocks()
+    {
+        if (isset(Yii::$app->request->get()['id'])==true){
+            $model = News::findOne(Yii::$app->request->get()['id']);
+        } else {
+            $model = null;
+        }
+        if (($model!==null)&&($model->type==2)) {
+            $modelOther2 = News::find()->where(['<>','id',$model->id])->andWhere(['type'=>$model->type])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther = News::find()->where(['type'=>1])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther5 = News::find()->where(['type'=>5])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther6 = News::find()->where(['type'=>6])->orderBy('date_news DESC')->limit(3)->all();
+            return $this->render('stocks',['model'=>$model,'modelOther'=>$modelOther,'modelOther2'=>$modelOther2,'modelOther5'=>$modelOther5,'modelOther6'=>$modelOther6]);
+        } else {
+            $model = News::find()->where(['type'=>2])->orderBy('date_news DESC')->all();
+            return $this->render('stocks_all',['model'=>$model]);
+        }
+    }
+    
+    public function actionLatest()
+    {
+        if (isset(Yii::$app->request->get()['id'])==true){
+            $model = News::findOne(Yii::$app->request->get()['id']);
+        } else {
+            $model = null;
+        }
+        if (($model!==null)&&($model->type==5)) {
+            $modelOther5 = News::find()->where(['<>','id',$model->id])->andWhere(['type'=>$model->type])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther = News::find()->where(['type'=>1])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther2 = News::find()->where(['type'=>2])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther6 = News::find()->where(['type'=>6])->orderBy('date_news DESC')->limit(3)->all();
+            return $this->render('latest',['model'=>$model,'modelOther'=>$modelOther,'modelOther2'=>$modelOther2,'modelOther5'=>$modelOther5,'modelOther6'=>$modelOther6]);
+        } else {
+            $model = News::find()->where(['type'=>5])->orderBy('date_news DESC')->all();
+            return $this->render('latest_all',['model'=>$model]);
+        }
+    }
+
+    public function actionDiscounts()
+    {
+        if (isset(Yii::$app->request->get()['id'])==true){
+            $model = News::findOne(Yii::$app->request->get()['id']);
+        } else {
+            $model = null;
+        }
+        if (($model!==null)&&($model->type==6)) {
+            $modelOther6 = News::find()->where(['<>','id',$model->id])->andWhere(['type'=>$model->type])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther = News::find()->where(['type'=>1])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther2 = News::find()->where(['type'=>2])->orderBy('date_news DESC')->limit(3)->all();
+            $modelOther5 = News::find()->where(['type'=>5])->orderBy('date_news DESC')->limit(3)->all();
+            return $this->render('discounts',['model'=>$model,'modelOther'=>$modelOther,'modelOther2'=>$modelOther2,'modelOther5'=>$modelOther5,'modelOther6'=>$modelOther6]);
+        } else {
+            $model = News::find()->where(['type'=>6])->orderBy('date_news DESC')->all();
+            return $this->render('discounts_all',['model'=>$model]);
+        }
+    }      
+    
+    public function actionProfile()
+    {
+        if (Yii::$app->user->isGuest === false) {
+            $change = false;
+            if (isset(Yii::$app->request->post()['File']['namefull'])){
+                $user = File::findOne(Yii::$app->user->identity->id);
+                if ($user == null) {
+                    $user = File::findByAuthKey(Yii::$app->user->identity->id);
+                }
+                $user->namefull = Yii::$app->request->post()['File']['namefull'];
+                $user->save(false,null,true);
+                $change = true;
+            }
+            return $this->render('profile',['change'=>$change]);
+        } else {
+            return $this->render('index');
+        }
+    }
+    
+    public function actionFileupload()
+    {
+        if (Yii::$app->user->isGuest === false) {
+            $user = File::findOne(Yii::$app->user->identity->id);
+            if ($user == null) {
+                $user = File::findByAuthKey(Yii::$app->user->identity->id);
+            }
+            
+            $user->file = $user->uploadProfilePicture();
+            $dir = $user->getProfilePictureFile();
+            if ($user->validate()) { 
+                $uploaded = $user->file->saveAs($dir);      
+                $isError = $user->save();
+                if ($isError != false){
+                    echo Json::encode(['error'=>"Файл загружен и сохранен, но при его записи возникли ошибки"]);
+                } else {
+                    echo Json::encode([]);
+                }
+            } else {
+                echo Json::encode(['error'=>$user->getFirstError('file')]);
+            }
+        }
     }
 }
