@@ -14,6 +14,7 @@ $this->title = 'Образовательный центр Хризантема';
 ?>
 <div class="site-index">
 <?php
+
 echo Carousel::widget([
     'options'=>[
         'class'=>'slide carousel-fade text-center',
