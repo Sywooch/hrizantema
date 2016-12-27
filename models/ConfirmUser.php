@@ -17,10 +17,10 @@ class ConfirmUser extends ActiveRecord
     protected function sendMailToUser($message,$email)
     {
        if (Yii::$app->mailer->compose('MessageToConfirmEmail',['message'=>$message])
-        ->setFrom('vorobyev.it@gmail.com')//отправитель
-        ->setTo($email)
-        ->setSubject('Bel-video успешная активация пользователя')//тема
-        ->send()){
+                       ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
+                        ->setTo($email)
+                        ->setSubject('Автоматическое письмо')//тема
+                        ->send()){
         return true;
      } else{
         return false;

@@ -67,12 +67,13 @@ $config = [
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
-                'username' => 'vorobyev.it@gmail.com',
-                'port' => '587', // Port 25 is a very common port too
-                'encryption' => 'tls', // It is often used, check your provider or mail server specs
+                'host' => 'ssl://smtp.yandex.ru',
+                'port' => '465',
+                'username' => 'hrizantema31@yandex.ru',
+                'encryption' => 'SSL'
             ],
             'useFileTransport' => false,
         ],

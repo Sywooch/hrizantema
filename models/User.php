@@ -39,9 +39,9 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
 
     protected function sendMailToUser($message, $email) {
         if (Yii::$app->mailer->compose('MessageToConfirmEmail', ['message' => $message])
-                        ->setFrom('vorobyev.it@gmail.com')//отправитель
+                        ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
                         ->setTo($email)
-                        ->setSubject('Bel-video')//тема
+                        ->setSubject('Автоматическое письмо')//тема
                         ->send()) {
             return true;
         } else {
