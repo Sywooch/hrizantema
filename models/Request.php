@@ -80,7 +80,7 @@ class Request extends \yii\db\ActiveRecord
 			->setHtmlBody($message);                        
         $messages[] = Yii::$app->mailer->compose()
                         ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
-                        ->setTo('hrizantema31@yandex@yandex.ru')
+                        ->setTo('hrizantema31@yandex.ru')
                         ->setSubject('Автоматическое письмо')
 			->setHtmlBody($message);        
         Yii::$app->mailer->sendMultiple($messages);
