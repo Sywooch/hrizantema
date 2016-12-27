@@ -71,11 +71,10 @@ $config = [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'ssl://smtp.yandex.ru',
-                'port' => '465',
                 'username' => 'hrizantema31@yandex.ru',
-                'encryption' => 'SSL'
+                'port' => '465',
+                //'encryption' => 'SSL'
             ],
-            'useFileTransport' => false,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
