@@ -81,32 +81,23 @@ class Request extends \yii\db\ActiveRecord
             $message=$message.$this->request_date;       
         }        
 
-//        $messages[] = Yii::$app->mailer->compose()
-//                        ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
-//                        ->setTo('hrizantema31@yandex.ru')
-//                        ->setSubject('Автоматическое письмо')
-//			->setHtmlBody($message);
-//        $messages[] = Yii::$app->mailer->compose()
-//                        ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
-//                        ->setTo('4399393@gmail.com')
-//                        ->setSubject('Автоматическое письмо')
-//			->setHtmlBody($message);                        
-//        $messages[] = Yii::$app->mailer->compose()
-//                        ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
-//                        ->setTo('ludmila.31rus@yandex.ru')
-//                        ->setSubject('Автоматическое письмо')
-//			->setHtmlBody($message); 
-        
-        $messages[] = Yii::$app->mailer->compose()
-                        ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
-                        ->setTo('vorobyev.it@gmail.com')
-                        ->setSubject('Автоматическое письмо')
-			->setHtmlBody($message);                        
         $messages[] = Yii::$app->mailer->compose()
                         ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
                         ->setTo('hrizantema31@yandex.ru')
                         ->setSubject('Автоматическое письмо')
-			->setHtmlBody($message);        
+			->setHtmlBody($message);
+        $messages[] = Yii::$app->mailer->compose()
+                        ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
+                        ->setTo('4399393@gmail.com')
+                        ->setSubject('Автоматическое письмо')
+			->setHtmlBody($message);                        
+        $messages[] = Yii::$app->mailer->compose()
+                        ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
+                        ->setTo('ludmila.31rus@yandex.ru')
+                        ->setSubject('Автоматическое письмо')
+			->setHtmlBody($message); 
+        
+      
         Yii::$app->mailer->sendMultiple($messages);
         
         
