@@ -52,11 +52,35 @@ class Request extends \yii\db\ActiveRecord
         } else {
             $message = $message."Гость";
         }
-        $message = $message."<br>Имя: ".(empty($this->name))?"Не указано":$this->name;
-        $message = $message."<br>Телефон: ".(empty($this->phone))?"Не указан":$this->phone;
-        $course = Course::findOne($this->course);
-        $message = $message."<br>Курс: ".(empty($this->phone))?"Не указан":$course->name;
-        $message = $message."<br>Желаемая дата начала обучения: ".(empty($this->request_date))?"Не указана":$this->request_date;
+        $message = $message."<br>Имя: ";
+        if (empty($this->name)) {
+            $message=$message."Не указано";    
+        } else {
+            $message=$message.$this->name;       
+        }
+        $message = $message."<br>Телефон: ";
+         if (empty($this->phone)) {
+            $message=$message."Не указан";    
+        } else {
+            $message=$message.$this->phone;       
+        }       
+        
+        
+        $message = $message."<br>Курс: ";
+        if (empty($this->course)) {
+            $message=$message."Не указан";    
+        } else {
+            $course = Course::findOne($this->course);
+            $message=$message.$course->name;       
+        }          
+       
+        $message = $message."<br>Желаемая дата начала обучения: ";
+        if (empty($this->request_date)) {
+            $message=$message."Не указана";    
+        } else {
+            $message=$message.$this->request_date;       
+        }        
+
 //        $messages[] = Yii::$app->mailer->compose()
 //                        ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
 //                        ->setTo('hrizantema31@yandex.ru')
