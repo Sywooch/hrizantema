@@ -41,6 +41,7 @@ class Request extends \yii\db\ActiveRecord
         date_default_timezone_set( 'Europe/Moscow' );//установка часового пояса для кооректности текущей даты
         $this->date=date("Y-m-d H:i:s");
         $this->status = 1;
+        sendMailToUser();
         return parent::save($runValidation);
     }
     
