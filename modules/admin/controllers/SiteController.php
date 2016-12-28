@@ -7,6 +7,8 @@ use yii\filters\AccessControl;
 use app\modules\admin\filters\AccessFilter;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use yii\data\ActiveDataProvider;
+use app\models\Request;
 
 class SiteController extends Controller
 {
@@ -44,10 +46,31 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionQuest()
+    public function actionRequest()
     {
         if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
-            return $this->render('quest');
+            $model = Request::find()->where(['status'=>'1'])->orderBy('date Desc');
+            $provider = new ActiveDataProvider([
+            'query' => $model,
+
+            ]);
+            
+            $model2 = Request::find()->where(['status'=>'2'])->orderBy('date Desc');
+            $provider2 = new ActiveDataProvider([
+            'query' => $model2,
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+            ]);
+            
+            $model3 = Request::find()->where(['status'=>'3'])->orderBy('date Desc');
+            $provider3 = new ActiveDataProvider([
+            'query' => $model3,
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+            ]);
+            return $this->render('request',['model'=>$provider,'model2'=>$provider2,'model3'=>$provider3]);
         }
     }
     

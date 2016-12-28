@@ -74,7 +74,7 @@ class Request extends \yii\db\ActiveRecord
             $message=$message.$course->name;       
         }          
        
-        $message = $message."<br>Желаемая дата начала обучения: ";
+        $message = $message." <br>Желаемая дата начала обучения: ";
         if (empty($this->request_date)) {
             $message=$message."Не указана";    
         } else {

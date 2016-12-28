@@ -182,7 +182,7 @@ AppAsset::register($this);
                     ['label' => 'Вход на сайт', 'url' => ['/site/login']]          
                     ) : ([
                         'label'=>Yii::$app->user->identity->username, 'items'=>[
-                            (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1')?['label' => 'Админка', 'url' => ['/admin']]:"",
+                            (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1')?['label' => 'Админка', 'url' => ['/admin/site/index']]:"",
                             ['label' => 'Мой профиль', 'url' => ['/site/profile']],
                             ['label' => ''
                                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form1'])

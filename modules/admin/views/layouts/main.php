@@ -50,7 +50,7 @@ AppAsset::register($this);
                     ['label' => 'Расписание','url' => ['/admin/timing']]
                 ]
             ],  
-            ['label' => 'Заявки', 'url' => ['/admin/site/order']],
+            ['label' => 'Заявки', 'url' => ['/admin/site/request']],
             ['label' => 'Комментарии', 'url' => ['/admin/comments/index']],
         ],
     ]);

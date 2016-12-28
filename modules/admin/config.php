@@ -13,7 +13,7 @@ $config = [
     ],
     'id' => 'admin',
     //'basePath' => dirname(__DIR__),
-    'defaultRoute' => 'site/quest',
+    'defaultRoute' => 'site/index',
     ];
 
 return $config;
