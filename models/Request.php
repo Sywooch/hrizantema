@@ -22,7 +22,7 @@ class Request extends \yii\db\ActiveRecord
     {
         return [
             [['status','date','name','phone'], 'required','message'=>'Поле обязательно для заполнения'],
-            [['request_date', 'course'], 'safe'],
+            [['request_date', 'course','about'], 'safe'],
         ];
     }
 
@@ -36,12 +36,14 @@ class Request extends \yii\db\ActiveRecord
         ];
     }
         
-    public function save($runValidation = false, $attributeNames = NULL)
+    public function save($runValidation = false, $attributeNames = NULL, $onlystatus = false)
     {
-        date_default_timezone_set( 'Europe/Moscow' );//установка часового пояса для кооректности текущей даты
-        $this->date=date("Y-m-d H:i:s");
-        $this->status = 1;
-        $this->sendMailToUser();
+        if (!$onlystatus) {
+            date_default_timezone_set( 'Europe/Moscow' );//установка часового пояса для кооректности текущей даты
+            $this->date=date("Y-m-d H:i:s");
+            $this->status = 1;
+            $this->sendMailToUser();
+        }
         return parent::save($runValidation);
     }
     
@@ -52,7 +54,7 @@ class Request extends \yii\db\ActiveRecord
         } else {
             $message = $message."Гость";
         }
-        $message = $message."<br>Имя: ";
+        $message = $message."<br>ФИО: ";
         if (empty($this->name)) {
             $message=$message."Не указано";    
         } else {
@@ -81,6 +83,13 @@ class Request extends \yii\db\ActiveRecord
             $message=$message.$this->request_date;       
         }        
 
+        $message = $message." <br>О себе: ";
+        if (empty($this->about)) {
+            $message=$message."Не указано";    
+        } else {
+            $message=$message.$this->about;       
+        }         
+        
         $messages[] = Yii::$app->mailer->compose()
                         ->setFrom(["hrizantema31@yandex.ru"=>"ЦПХ \"Хризантема\""])//отправитель
                         ->setTo('hrizantema31@yandex.ru')

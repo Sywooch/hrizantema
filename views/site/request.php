@@ -39,20 +39,23 @@ $this->params['breadcrumbs'][] = $this->title;
     
     ?>
     
-    <?= $form->field($modelRequest, 'name')->textInput()->label('Ваше имя') ?>
-    <?= $form->field($modelRequest, 'phone')->textInput()->label('Номер телефона') ?>
+    <?= $form->field($modelRequest, 'name')->textInput()->label('ФИО (полностью) <span style="color:red">*</span>') ?>
+    <?= $form->field($modelRequest, 'phone')->textInput()->label('Номер телефона <span style="color:red">*</span>') ?>
 
     <?= $form->field($modelRequest, 'course')->dropDownList($arr)->label('Курс') ?>
             <?= $form->field($modelRequest, 'request_date')->widget(DatePicker::className(),[
                 'pluginOptions'=>['format'=>'dd.mm.yyyy '],
                 'language'=>'ru',
         ])->label('Желаемая дата начала обучения');  ?>
-    
-
-    
+    <?= $form->field($modelRequest, 'about')->textarea()->label('О себе '.Html::tag('span', '', [
+    'title'=>'Укажите (если уже имеете) свое образование, профессию, занимаемую должность, стаж работы, уровень навыков (любитель, профессионал, новичок)',
+    'data-toggle'=>'tooltip',
+    'style'=>'cursor:pointer; color:#337ab7; font-size:14pt;',
+    'class'=>'glyphicon glyphicon-question-sign'    
+])) ?>
     
     <div class="form-group text-center">
-        <?= Html::submitButton('Отправить',['class' => 'btn btn-primary btn-outline']) ?>
+        <?= Html::submitButton('Отправить',['class' => 'btn btn-primary btn-outline','style'=>'margin-bottom:140px']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>    
@@ -72,7 +75,13 @@ $this->params['breadcrumbs'][] = $this->title;
         $this->registerJs("$('#request-name').val('".Yii::$app->user->identity->namefull."');"); 
     }
     
-    
+    $js =''
+   .'$(function () {' 
+   .'    $("[data-toggle=\'tooltip\']").tooltip(); '
+   .'});';
+
+
+   $this->registerJs($js);   
     
  
     ?>

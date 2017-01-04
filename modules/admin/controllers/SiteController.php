@@ -101,4 +101,28 @@ class SiteController extends Controller
             return $this->render('timing');
         }
     }  
+    
+    public function actionAccessrequest()
+    {
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            if (isset(Yii::$app->request->get()['id'])) {
+                $request = Request::findOne(Yii::$app->request->get()['id']);
+                $request->status = 2;
+                $request->save(false,null,true);
+            }  
+            return $this->redirect('request');
+        }
+    }  
+    
+    public function actionDeclinerequest()
+    {
+        if (!Yii::$app->user->isGuest&&Yii::$app->user->identity->admin == '1'){
+            if (isset(Yii::$app->request->get()['id'])) {
+                $request = Request::findOne(Yii::$app->request->get()['id']);
+                $request->status = 3;
+                $request->save(false,null,true);
+            }  
+            return $this->redirect('request');
+        }
+    }  
 }

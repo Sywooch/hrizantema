@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\Request;
 
 AppAsset::register($this);
 ?>
@@ -32,7 +33,10 @@ AppAsset::register($this);
 <div class="wrap">
     <div class="text-center h2" style="margin:0px">Режим администратора</div>
     <?php
-    
+    $requestCol = Request::find()->where(['status'=>'1'])->count();
+    if ($requestCol == 0) {
+        $requestCol = '0';
+    }
     NavBar::begin([
         'brandLabel' => '',
         'brandUrl' => Yii::$app->homeUrl,
@@ -50,7 +54,7 @@ AppAsset::register($this);
                     ['label' => 'Расписание','url' => ['/admin/timing']]
                 ]
             ],  
-            ['label' => 'Заявки', 'url' => ['/admin/site/request']],
+            ['label' => 'Заявки ('.(string)$requestCol.")", 'url' => ['/admin/site/request']],
             ['label' => 'Комментарии', 'url' => ['/admin/comments/index']],
         ],
     ]);
