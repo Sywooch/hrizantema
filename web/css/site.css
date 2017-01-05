@@ -612,3 +612,22 @@ li.menu-not-padding a{
 #img-avatar:hover {
     cursor:pointer;
 }
+
+.rekommend {
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    border:1px;
+    border-radius:20%;
+    min-width:70px;
+}
+.text-rekommend {
+    font-size:11pt;
+    text-shadow:0 1px 2px rgba(0, 0, 0, .1 );
+} 
+
+.subtext {
+    color:#777;
+    padding-top:5px;
+    font-weight:bold;
+    font-style:italic;
+    text-align:center;
+}

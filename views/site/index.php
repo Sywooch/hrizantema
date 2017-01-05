@@ -7,6 +7,7 @@ use kartik\popover\PopoverX;
 use app\models\News;
 use yii\bootstrap\Html;
 use yii\helpers\StringHelper;
+use app\models\Category;
 
 /* @var $this yii\web\View */
 
@@ -244,3 +245,90 @@ $news4 = $news4."<div onClick=\"window.location.href='".Url::to(['site/discounts
         <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret4.jpg'/>
     </div>
 </div>
+
+<div class="caption_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-2 col-xs-offset-2" style="padding-top:40px;padding-bottom:40px;">
+    <div ><a class="not-hover" id="course">КУРСЫ</a></div>
+</div> 
+
+
+<div style='display:flex; justify-content: center' class='hidden-sm hidden-xs'>
+<?php
+
+$categories = Category::find()->all();
+$items = [];
+
+foreach ($categories as $category) {
+    echo "<div onClick=\"window.location.href='".Url::to(['site/courses','id'=>$category->id])."'\" align=center class='block-cat col-lg-2 col-md-2' style='max-width:150px; mix-width:149px'><img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name."</div>";
+}
+
+?>
+</div>
+
+<div class='hidden-lg hidden-md'>
+<?php
+
+$categories = Category::find()->all();
+$items = [];
+$counter=0;
+foreach ($categories as $category) {
+    $counter = $counter+1;
+    if ($counter%2 == 1) {
+        echo "<div style='display:flex; justify-content: center'>";
+    }
+
+    echo "<div align=center  class='col-sm-3 col-xs-4 block-cat' style='max-width:150px;mix-width:149px'>".Html::a("<img class='img-responsive img-cat' src='".$category->img."'></img><br/>".$category->name,['courses','id'=>$category->id],['class'=>'not-hover','style'=>'color:inherit'])."</div>";
+
+    if ($counter%2 == 0 ) {
+        echo "</div>";
+    }
+    if ($counter%2 == 0) {
+        echo "<div class='col-sm-12 col-xs-12'> </div><br/>";
+    }
+    if ($counter == count($categories)){
+       echo "</div>"; 
+    }
+}
+
+?>
+</div>
+
+
+<div class="caption_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-2 col-xs-offset-2" style="padding-top:40px;padding-bottom:40px;">
+    <div ><a class="not-hover" id="course">ОТЗЫВЫ ПРОШЕДШИХ ОБУЧЕНИЕ</a></div>
+</div> 
+<hr/>
+<div class='col-lg-offset-1 col-md-offset-1' style='display:flex'>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " style='margin:auto'>
+        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/collective/portret2.jpg'/>
+        <div class='subtext'>Ольга Фролова</div>
+    </div>
+    
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-rekommend" >
+           Задача организации, в особенности же реализация намеченных плановых заданий в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что сложившаяся структура организации влечет за собой процесс внедрения и модернизации систем массового участия. Задача организации, в особенности же дальнейшее развитие различных форм деятельности играет важную роль в формировании соответствующий условий активизации.
+    Задача организации, в особенности же реализация намеченных плановых заданий в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что сложившаяся структура организации влечет за собой процесс внедрения и модернизации систем массового участия. Задача организации, в особенности же дальнейшее развитие различных форм деятельности играет важную роль в формировании соответствующий условий активизации.
+    </div>
+</div>               
+<hr/>
+<div class='col-lg-offset-1 col-md-offset-1' style='display:flex'>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " style='margin:auto'>
+        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/collective/portret3.jpg'/>
+        <div class='subtext'>Борис Гребенщиков</div>
+    </div>
+    
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-rekommend" >
+        Разнообразный и богатый опыт консультация с широким активом способствует подготовки и реализации модели развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности влечет за собой процесс внедрения и модернизации дальнейших направлений развития.
+        Разнообразный и богатый опыт консультация с широким активом способствует подготовки и реализации модели развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности влечет за собой процесс внедрения и модернизации дальнейших направлений развития.
+ </div>
+</div>               
+<hr/>
+<div class='col-lg-offset-1 col-md-offset-1' style='display:flex'>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " style='margin:auto'>
+        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/collective/portret1.jpg'/>
+        <div class='subtext'>Алена Прекрасная</div>
+    </div>
+    
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-rekommend" >
+Таким образом сложившаяся структура организации позволяет оценить значение направлений прогрессивного развития. Равным образом рамки и место обучения кадров позволяет оценить значение форм развития. Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+    </div>
+</div>               
+<hr/>
