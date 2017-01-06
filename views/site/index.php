@@ -25,25 +25,25 @@ echo Carousel::widget([
     'controls'=>['<span class="glyphicon glyphicon-chevron-left"></span>','<span class="glyphicon glyphicon-chevron-right"></span>'],
     'items' => [
         [
-            'content' => '<img  src="'.Yii::getAlias('@web').'/images/slider/vizazhist11.jpg"/>',
+            'content' => '<img  src="'.Yii::getAlias('@web').'/images/slider/1.png"/>',
             'caption' => '<div class="hidden-xs hidden-sm"><h2>Обучайся новому</h2><h4>Базовые курсы и дополнительное образование к основному <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>15]).'">"Визажист"</a></h4></div>'
             .'<div class="hidden-lg hidden-md"><h4>Обучайся новому</h4><h5>Базовые курсы и дополнительное образование к основному <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>15]).'">"Визажист"</a></h5></div>',
-            
+            'options' => ['style'=>''],
         ],
         [
-            'content' => '<img src="'.Yii::getAlias('@web').'/images/slider/parikmaker11.jpg"/>',
+            'content' => '<img src="'.Yii::getAlias('@web').'/images/slider/2.png"/>',
             'caption' => '<div class="hidden-xs hidden-sm"><h2>Приобретай полезные навыки</h2><h4>Курсы <a href="'.Url::toRoute(['site/courses','id'=>5,'course'=>23]).'">"Сам себе парихмахер"</a> и <a href="'.Url::toRoute(['site/courses','id'=>5,'course'=>26]).'">"Сам себе визажист"</a> <br/>для самообразования</h4></div>'
             .'<div class="hidden-lg hidden-md"><h4>Приобретай полезные навыки</h4><h5>Курсы <a href="'.Url::toRoute(['site/courses','id'=>5,'course'=>23]).'">"Сам себе парихмахер"</a> и <a href="'.Url::toRoute(['site/courses','id'=>5,'course'=>26]).'">"Сам себе визажист"</a> <br/>для самообразования</h5></div>',
             'options' => [],
         ],
         [
-            'content' => '<img src="'.Yii::getAlias('@web').'/images/slider/manikur11.jpg"/>',
+            'content' => '<img src="'.Yii::getAlias('@web').'/images/slider/3.png"/>',
             'caption' => '<div class="hidden-xs hidden-sm"><h2>Получай современное образование</h2><h4>Программы обучения <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>16]).'">"Мастер маникюра"</a>, <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>16]).'">"Мастер педикюра"</a> и <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>18]).'">"Основы художественной росписи"</a></h4></div>'
             .'<div class="hidden-lg hidden-md"><h4>Получай современное образование</h4><h5>Программы обучения <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>16]).'">"Мастер маникюра"</a>, <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>16]).'">"Мастер педикюра"</a> и <a href="'.Url::toRoute(['site/courses','id'=>3,'course'=>18]).'">"Основы художественной росписи"</a></h5></div>',
             'options' => [],
         ],
         [
-            'content' => '<img src="'.Yii::getAlias('@web').'/images/slider/parikmaker22.jpg"/>',
+            'content' => '<img src="'.Yii::getAlias('@web').'/images/slider/4.png"/>',
             'caption' => '<div class="hidden-xs hidden-sm"><h2>Изучай дополнительные профессии</h2><h4>Профессиональные курсы <a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>10]).'">"Парикмахер-модельер"</a>,<a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>8]).'">"Колорист"</a>,<a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>14]).'">"Свадебный стилист"</a> и другие</h4></div>'
             .'<div class="hidden-lg hidden-md"><h4>Изучай дополнительные профессии</h4><h5>Профессиональные курсы <a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>10]).'">"Парикмахер-модельер"</a>,<a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>8]).'">"Колорист"</a>,<a href="'.Url::toRoute(['site/courses','id'=>2,'course'=>14]).'">"Свадебный стилист"</a> и другие</h5></div>',
             'options' => [],
@@ -198,7 +198,7 @@ $news4 = $news4."<div onClick=\"window.location.href='".Url::to(['site/discounts
 
 <div style='display:flex'>
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
-        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret1.jpg'/>
+        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret1.png'/>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-collective" style="margin:auto">
 
@@ -216,7 +216,7 @@ $news4 = $news4."<div onClick=\"window.location.href='".Url::to(['site/discounts
 
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
-        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret2.jpg'/>
+        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret2.png'/>
     </div>
 </div>
 
@@ -224,7 +224,7 @@ $news4 = $news4."<div onClick=\"window.location.href='".Url::to(['site/discounts
 
 <div style='display:flex'>
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
-        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret3.jpg'/>
+        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret3.png'/>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-collective" style="margin:auto">
 
@@ -242,7 +242,44 @@ $news4 = $news4."<div onClick=\"window.location.href='".Url::to(['site/discounts
 
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
-        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret4.jpg'/>
+        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret4.png'/>
+    </div>
+</div>
+
+<div style='display:flex'>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
+        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret5.png'/>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-collective" style="margin:auto">
+
+            <b>Иванова Лариса Ивановна</b> - c другой стороны сложившаяся структура организации позволяет оценить значение форм развития. Значимость этих проблем настолько очевидна, что консультация с широким активом влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
+
+    </div>
+</div>
+
+<div class="visible-xs col-lg-10" style="margin-top:40px;"></div>
+
+<div style='display:flex'>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-collective text-right" style="margin:auto">
+
+            <b>Комарова Анастасия Ивановна</b> - реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Равным образом рамки и место обучения кадров играет важную роль в формировании существенных финансовых и административных условий. 
+
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
+        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret6.png'/>
+    </div>
+</div>
+
+<div class="visible-xs col-lg-10" style="margin-top:40px;"></div>
+
+<div style='display:flex'>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
+        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret7.png'/>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-collective" style="margin:auto">
+
+            <b>Сидоров Игорь Алексеевич</b> - задача организации, в особенности же новая модель организационной деятельности представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации модели развития.
+
     </div>
 </div>
 
@@ -299,7 +336,7 @@ foreach ($categories as $category) {
 <hr/>
 <div class='col-lg-offset-1 col-md-offset-1' style='display:flex'>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " style='margin:auto'>
-        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/collective/portret2.jpg'/>
+        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/otzivi/otziv1.png'/>
         <div class='subtext'>Ольга Фролова</div>
     </div>
     
@@ -311,7 +348,7 @@ foreach ($categories as $category) {
 <hr/>
 <div class='col-lg-offset-1 col-md-offset-1' style='display:flex'>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " style='margin:auto'>
-        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/collective/portret3.jpg'/>
+        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/otzivi/otziv2.png'/>
         <div class='subtext'>Борис Гребенщиков</div>
     </div>
     
@@ -323,7 +360,7 @@ foreach ($categories as $category) {
 <hr/>
 <div class='col-lg-offset-1 col-md-offset-1' style='display:flex'>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " style='margin:auto'>
-        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/collective/portret1.jpg'/>
+        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/otzivi/otziv3.png'/>
         <div class='subtext'>Алена Прекрасная</div>
     </div>
     
