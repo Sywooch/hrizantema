@@ -8,8 +8,11 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log','forum'],
     'modules' => [
+        'gallery' => [
+            'class' => 'onmotion\gallery\Module',
+        ],
         'forum' => [
-        'class' => 'bizley\podium\Podium',
+            'class' => 'bizley\podium\Podium',
         ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
@@ -100,7 +103,7 @@ $config = [
             ],
         ],
         'assetManager' => [
-            'appendTimestamp' => true,
+            //'appendTimestamp' => true,
             'converter' => [
               'class' => 'yii\web\AssetConverter',
               'commands' => [
@@ -122,7 +125,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                '<action>' => 'site/<action>',
+                //'<action>' => 'site/<action>',
                 'login/<service:google_oauth|facebook|yandex_oauth|vkontakte|odnoklassniki|mailru>' => 'site/login',
                  '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
@@ -140,6 +143,13 @@ $config = [
                 ],
             ],
         ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@vendor/onmotion/yii2-gallery/views' => '@app/views/gallery', // example: @app/views/gallery/default/index.php
+                ],
+            ],
+        ]
     ],
     'params' => $params,
 ];

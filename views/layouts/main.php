@@ -151,7 +151,7 @@ AppAsset::register($this);
                     ['label' => 'Скидки', 'url' => ['/site/discounts']],
                 ]
             ],
-            ['label' => 'Фотогалерея', 'url' => ['/site/gallery']],
+            ['label' => 'Фотогалерея', 'url' => ['/gallery']],
             ['label' => 'Форум', 'url' => ['/forum/home']],
             ['label'=>''
                 .Html::button(
@@ -209,7 +209,7 @@ AppAsset::register($this);
     <div class='col-lg-offset-1 col-md-offset-1 col-lg-10  col-md-10 col-sm-12 col-xs-12' style="padding-bottom:20px; ">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            'homeLink'=>['label'=>'Главная','url'=>Url::to(['site/index'])]
+            'homeLink'=>['label'=>'Главная','url'=>Url::to(['/site/index'])]
         ]) ?>
       
         <?= $content ?>
@@ -227,26 +227,26 @@ AppAsset::register($this);
         </div>
      
         <div class="col-lg-4 col-md-4 col-sm-6 text-left">
-            <p><?= Html::a('Новости',['site/news']) ?>&nbsp; | &nbsp;<?= Html::a('Акции',['site/stocks']) ?>&nbsp; | &nbsp;<?= Html::a('Новинки',['site/latest']) ?>&nbsp; | &nbsp;<?= Html::a('Скидки',['site/discounts']) ?></p>
+            <p><?= Html::a('Новости',['site/news']) ?>&nbsp; | &nbsp;<?= Html::a('Акции',['/site/stocks']) ?>&nbsp; | &nbsp;<?= Html::a('Новинки',['site/latest']) ?>&nbsp; | &nbsp;<?= Html::a('Скидки',['site/discounts']) ?></p>
             <hr style="margin-top:0px; margin-bottom:10px;"/>
             <p><?= Html::a('Сведения об образовательной организации','http://hrizantema31.ru/about') ?></p>
-            <p><?= Html::a('Курсы и расписание',['site/courses']) ?></p>
+            <p><?= Html::a('Курсы и расписание',['/site/courses']) ?></p>
             <p><?= Html::a('Подать заявку на обучение',['site/request']) ?></p>
             <hr style="margin-top:0px; margin-bottom:10px;"/>
-            <p><?= Html::a('Фотогалерея',['site/gallery']) ?></p>
-            <p><?= Html::a('Форум',['forum/home']) ?></p>
-            <p><?= Html::a('Обратная связь',['site/contact']) ?></p>
+            <p><?= Html::a('Фотогалерея',['/gallery']) ?></p>
+            <p><?= Html::a('Форум',['/forum/home']) ?></p>
+            <p><?= Html::a('Обратная связь',['/site/contact']) ?></p>
 
         </div>
         
         <div class="col-lg-3 col-md-4 col-sm-12 text-left col-lg-offset-1">
             <?php
                 if (Yii::$app->user->isGuest) {
-                    echo Html::a('Вход на сайт',['site/login'])."&nbsp; | &nbsp;".Html::a('Регистрация',['user/add']);
+                    echo Html::a('Вход на сайт',['/site/login'])."&nbsp; | &nbsp;".Html::a('Регистрация',['user/add']);
                 } else {
                     echo "<img src='".Yii::$app->user->identity->avatar."' style='min-width:40px; min-height:40px;max-width:60px; max-height:60px; float:left; margin-right:10px; border: 1px solid #e2e2e2'>";
-                    echo Html::a('Профиль',['site/profile'])."<br/>";
-                    echo Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form1'])
+                    echo Html::a('Профиль',['/site/profile'])."<br/>";
+                    echo Html::beginForm(['site/logout'], 'post', ['class' => 'navbar-form1'])
                     . Html::submitButton(
                         'Выйти (' . Yii::$app->user->identity->username . ')',
                         ['class' => 'btn btn-link','style'=>'padding-left:6px; ']

@@ -56,6 +56,7 @@ AppAsset::register($this);
             ],  
             ['label' => 'Заявки ('.(string)$requestCol.")", 'url' => ['/admin/site/request']],
             ['label' => 'Комментарии', 'url' => ['/admin/comments/index']],
+            ['label' => 'Фотогалерея', 'url' => ['/gallery']],
         ],
     ]);
     

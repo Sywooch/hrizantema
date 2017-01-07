@@ -633,3 +633,12 @@ li.menu-not-padding a{
     font-style:italic;
     text-align:center;
 }
+
+#gallery-listview .gallery-item .image {
+    width:220px;
+    height:220px;
+}
+
+.gallery-view{
+    margin-bottom:200px;
+}
