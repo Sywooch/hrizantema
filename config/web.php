@@ -35,7 +35,10 @@ $config = [
                      
                 ]
             ]
-        ]
+        ],
+        'utility' => [
+                'class' => 'c006\utility\migration\Module',
+            ],
     ],
     'language' => 'ru',                        
     'controllerMap' => [
