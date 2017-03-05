@@ -51,8 +51,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'label' => 'Курс',
                 'value' => function($data){
-                    if (($data->course!==NULL)&&($data->course!==0)){
-                        $content = Course::findOne($data->course)->name;
+                    if (($data->course!==NULL)&&($data->course!=0)){
+                        $course = Course::findOne($data->course);
+                        if (isset($course)){
+                            $content = Course::findOne($data->course)->name;
+                        } else {
+                            $content = "Не найден";
+                        }
                     } else {
                         $content = "Не указан";
                     }
@@ -142,7 +147,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Курс',
                 'value' => function($data){
                     if (($data->course!==NULL)&&($data->course!==0)){
-                        $content = Course::findOne($data->course)->name;
+                        $course = Course::findOne($data->course);
+                        if (isset($course)){
+                            $content = Course::findOne($data->course)->name;
+                        } else {
+                            $content = "Не найден";
+                        }
                     } else {
                         $content = "Не указан";
                     }
@@ -229,7 +239,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Курс',
                 'value' => function($data){
                     if (($data->course!==NULL)&&($data->course!==0)){
-                        $content = Course::findOne($data->course)->name;
+                        $course = Course::findOne($data->course);
+                        if (isset($course)){
+                            $content = Course::findOne($data->course)->name;
+                        } else {
+                            $content = "Не найден";
+                        }
                     } else {
                         $content = "Не указан";
                     }
