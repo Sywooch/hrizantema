@@ -13,6 +13,7 @@ $config = [
         ],
         'forum' => [
             'class' => 'bizley\podium\Podium',
+            'allowedIPs' => ['127.0.0.1', '10.0.18.240','141.8.195.77','192.168.10.103','93.170.110.88']
         ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
@@ -127,13 +128,13 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '' => 'site/index',
+                
                 //'<action>' => 'site/<action>',
                 'login/<service:google_oauth|facebook|yandex_oauth|vkontakte|odnoklassniki|mailru>' => 'site/login',
                  '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                //'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                //'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                //'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],
         ],
         'log' => [

@@ -202,8 +202,12 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     }
     
     public function getAvatar() {
-        if (file_exists(Yii::getAlias('@app')."/web/".$this->img)&&($this->img!=="")&&($this->img!==NULL)) {
-            return $this->img;
+        $obj = self::findByAuthKey($this->id);
+        if (!isset($obj)){
+            $obj = $this;
+        }
+        if (file_exists(Yii::getAlias('@app')."/public_html/".$obj->img)&&($obj->img!=="")&&($obj->img!==NULL)) {
+            return $obj->img;       
         } else {
             return Yii::getAlias('@web')."/images/users/no_avatar.gif";
         }

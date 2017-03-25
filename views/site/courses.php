@@ -190,7 +190,7 @@ if ($modelCourse!==false) {
         echo '<hr/><div class="caption_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-1" style="padding-top:10px;padding-bottom:40px;">'
             .'<a class="not-hover" id="course">'.$modelCourse->name.'</a>'
         .'</div>';
-        echo "<div class='col-lg-10 col-lg-offset-1 col-md-offset-1'>".$modelCourse->description."</div>";
+        echo "<div class='col-lg-10 col-lg-offset-1 col-md-offset-1' id='descr'>".$modelCourse->description."</div>";
         echo "<div class='col-lg-11 col-lg-offset-1 col-md-offset-1'><b>Длительность курса: <span class='duration'>".$modelCourse->duration."&nbsp;ч</span></b></div>";
         echo "<div class='col-lg-11 col-lg-offset-1 col-md-offset-1'><b>Цена: <span class='price'>".$modelCourse->price."&nbsp;р</span></b></div>";
         echo "<div style='padding-top:10px;' class='col-lg-11 col-lg-offset-1 text-center'>".Html::button('Расписание курса',['class'=>'btn btn-success btn-outline','onclick'=>'$("#calendar").css("display","block");$(\'.fc-today-button\').click(); $(\'html, body\').animate({ scrollTop: $(\'#calendar2\').offset().top-55 }, 500);'])." ".Html::a('Подать заявку на обучение',['site/request','course'=>$modelCourse->id],['class'=>'btn btn-primary btn-outline'])."</div>";

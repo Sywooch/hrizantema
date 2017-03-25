@@ -38,13 +38,13 @@ return [
             'clientSecret' => '53b12fad597c43c3bad3ec22a2063074',
             'title' => 'Yandex',
         ),
-        'facebook' => array(
-            // register your app here: https://developers.facebook.com/apps/
-            'class' => 'nodge\eauth\services\FacebookOAuth2Service',
-            'clientId' => '306958666350353',
-            'clientSecret' => '923547e72864a97784fac888e8e791fd',
-            'title' => 'Facebook'
-        ),
+//        'facebook' => array(
+//            // register your app here: https://developers.facebook.com/apps/
+//            'class' => 'nodge\eauth\services\FacebookOAuth2Service',
+//           'clientId' => '306958666350353',
+//            'clientSecret' => '923547e72864a97784fac888e8e791fd',
+//            'title' => 'Facebook'
+//        ),
 //        'yahoo' => array(
 //            'class' => 'nodge\eauth\services\YahooOpenIDService',
 //            //'realm' => '*.example.org', // your domain, can be with wildcard to authenticate on subdomains.
@@ -79,28 +79,27 @@ return [
 //            'class' => 'nodge\eauth\services\SteamOpenIDService',
 //            //'realm' => '*.example.org', // your domain, can be with wildcard to authenticate on subdomains.
 //        ),
-        'vkontakte' => array(
-            // register your app here: https://vk.com/editapp?act=create&site=1
-            'class' => 'nodge\eauth\services\VKontakteOAuth2Service',
-            'clientId' => '5662247',
-            'clientSecret' => '0tr4DhJmlcXtbzmQs2m6',
-            'title' => 'VK'
+//        'vkontakte' => array(
+//            // register your app here: https://vk.com/editapp?act=create&site=1
+//            'class' => 'nodge\eauth\services\VKontakteOAuth2Service',
+//            'clientId' => '5662247',
+//            'clientSecret' => '0tr4DhJmlcXtbzmQs2m6',
+//            'title' => 'VK'
+//        ),
+        'mailru' => array(
+            // register your app here: http://api.mail.ru/sites/my/add
+            'class' => 'nodge\eauth\services\MailruOAuth2Service',
+            'clientId' => '752698',
+            'clientSecret' => '94ee55f98c0897e85ff4a9e7636b3eac',
         ),
-//        'mailru' => array(
-//            // register your app here: http://api.mail.ru/sites/my/add
-//            'class' => 'nodge\eauth\services\MailruOAuth2Service',
-//            'clientId' => '748694',
-//            'clientSecret' => '2c24e8673da18f37a68b77c62735db53',
-//        ),
-//        'odnoklassniki' => array(
-//            // register your app here: http://dev.odnoklassniki.ru/wiki/pages/viewpage.action?pageId=13992188
-//            // ... or here: http://www.odnoklassniki.ru/dk?st.cmd=appsInfoMyDevList&st._aid=Apps_Info_MyDev
-//            'class' => 'nodge\eauth\services\OdnoklassnikiOAuth2Service',
-//            'clientId' => '748694',
-//            'clientSecret' => '2c24e8673da18f37a68b77c62735db53',
-//            'clientPublic' => 'e32b606d7a7396c537d7f284a340f208',
-//            'title' => 'Odnoklas.',
-//        ),
+        'odnoklassniki' => array(
+            // register your app here: http://dev.odnoklassniki.ru/wiki/pages/viewpage.action?pageId=13992188
+            // ... or here: http://www.odnoklassniki.ru/dk?st.cmd=appsInfoMyDevList&st._aid=Apps_Info_MyDev
+            'class' => 'nodge\eauth\services\OdnoklassnikiOAuth2Service',
+            'clientId' => '1250200064',
+            'clientSecret' => '00AA3F9600DB12541AEAC4BB',
+            'clientPublic' => 'CBALIFILEBABABABA',
+            'title' => 'Odnoklas.',
+        ),
     ),
 ];
-

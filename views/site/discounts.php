@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="col-lg-8 col-md-8" style="border-right:1px solid #eee">
 <div class='img-left col-lg-5 col-md-5 col-sm-5 col-xs-12'>
-    <a href='' onclick='return false;'><img class='img-responsive' src='<?= $model->img ?>' onclick='$("#img_view").attr("src","<?= $model->img ?>"); $("#modal-img").modal("show")'/></a>
+    <a href='' onclick='return false;'><img class='img-responsive' style='max-height:300px;' src='<?= $model->img ?>' onclick='$("#img_view").attr("src","<?= $model->img ?>"); $("#modal-img").modal("show")'/></a>
 </div>
 <div class="text-news"><?= $model->text ?></div>
 <div class='news-date' style='float:left; padding-left:0px'>Дата: <?= $model->date_news ?></div>
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
         
         foreach ($modelOther as $newOther) {
             $cont = $cont."<div style='min-height:120px;display:flex;font-size:9pt;' class='news-right'>";;
-            $cont = $cont."<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 news-img'>".Html::a("<img class='img-responsive'  src='".$newOther->img."'></div>",['site/news','id'=>$newOther->id],['class'=>'']);
+            $cont = $cont."<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 news-img'>".Html::a("<img style='max-height:100px;' class='img-responsive'  src='".$newOther->img."'></div>",['site/news','id'=>$newOther->id],['class'=>'']);
             $cont = $cont."<div class='col-lg-7 col-md-7 col-sm-7 col-xs-7' style='margin:auto 0; text-align:left'>".Html::a($newOther->title,['site/news','id'=>$newOther->id])."</div>";
             $cont = $cont."</div>";
             $cont = $cont."<div style='font-size:8pt; margin-top:-17px; text-align:right;padding-right:5px; color:#777;'> Дата: ".$newOther->date_news."</div>";
@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
     if ($modelOther2 !== null){
         foreach ($modelOther2 as $newOther) {
             $cont2 = $cont2."<div style='min-height:120px;display:flex;font-size:9pt' class='news-right'>";
-            $cont2 = $cont2."<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 news-img'>".Html::a("<img class='img-responsive'  src='".$newOther->img."'></div>",['site/stocks','id'=>$newOther->id],['class'=>'']);
+            $cont2 = $cont2."<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 news-img'>".Html::a("<img style='max-height:100px;' class='img-responsive'  src='".$newOther->img."'></div>",['site/stocks','id'=>$newOther->id],['class'=>'']);
             $cont2 = $cont2."<div class='col-lg-7 col-md-7 col-sm-7 col-xs-7' style='margin:auto 0; text-align:left'>".Html::a($newOther->title,['site/stocks','id'=>$newOther->id])."</div>";
             $cont2 = $cont2."</div>";
             $cont2 = $cont2."<div style='font-size:8pt; margin-top:-17px; text-align:right;padding-right:5px; color:#777;'> Дата: ".$newOther->date_news."</div>";
@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] = $this->title;
     if ($modelOther5 !== null){
         foreach ($modelOther5 as $newOther) {
             $cont5 = $cont5."<div style='min-height:120px;display:flex;font-size:9pt' class='news-right'>";
-            $cont5 = $cont5."<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 news-img'>".Html::a("<img class='img-responsive'  src='".$newOther->img."'></div>",['site/latest','id'=>$newOther->id],['class'=>'']);
+            $cont5 = $cont5."<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 news-img'>".Html::a("<img style='max-height:100px;' class='img-responsive'  src='".$newOther->img."'></div>",['site/latest','id'=>$newOther->id],['class'=>'']);
             $cont5 = $cont5."<div class='col-lg-7 col-md-7 col-sm-7 col-xs-7' style='margin:auto 0; text-align:left'>".Html::a($newOther->title,['site/latest','id'=>$newOther->id])."</div>";
             $cont5 = $cont5."</div>";
             $cont5 = $cont5."<div style='font-size:8pt; margin-top:-17px; text-align:right;padding-right:5px; color:#777;'> Дата: ".$newOther->date_news."</div>";
@@ -86,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
         //$cont6 = $cont6."<hr style='margin-top:-15px; border:none; margin-bottom:0px'/>";
         foreach ($modelOther6 as $newOther) {
             $cont6 = $cont6."<div style='min-height:120px;display:flex;font-size:9pt' class='news-right'>";
-            $cont6 = $cont6."<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 news-img'>".Html::a("<img class='img-responsive'  src='".$newOther->img."'></div>",['site/discounts','id'=>$newOther->id],['class'=>'']);
+            $cont6 = $cont6."<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 news-img'>".Html::a("<img style='max-height:100px;' class='img-responsive'  src='".$newOther->img."'></div>",['site/discounts','id'=>$newOther->id],['class'=>'']);
             $cont6 = $cont6."<div class='col-lg-7 col-md-7 col-sm-7 col-xs-7' style='margin:auto 0; text-align:left'>".Html::a($newOther->title,['site/discounts','id'=>$newOther->id])."</div>";
             $cont6 = $cont6."</div>";
             $cont6 = $cont6."<div style='font-size:8pt; margin-top:-17px; text-align:right;padding-right:5px; color:#777;'> Дата: ".$newOther->date_news."</div>";

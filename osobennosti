@@ -1,0 +1,4 @@
+vendor/nodge/src/assets/js/eauth.js
+				options = $.extend({
+					url: "http://xn--31-6kcaykg9ah0a0a4a.xn--p1ai"+this.href.replace("https://хризантема31.рф","").replace("https://xn--31-6kcaykg9ah0a0a4a.xn--p1ai","")
+				}, defaults, services[service]);

@@ -35,7 +35,7 @@ $attributes = [
                 'attribute'=>'user_id',
                 'label'=>'Автор',
                 'displayOnly'=>true,
-                'value'=>$model->user->name
+                'value'=>$model->user->username
             ],
             [
                 'attribute'=>'date', 

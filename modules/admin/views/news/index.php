@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Изображение',
                 'value' => function($data){
         
-                    $content="<a href='' onclick='return false;'><img class='img-responsive' src='".$data->img."' onclick='$(\"#img_view\").attr(\"src\",\"".$data->img."\"); $(\"#modal-img\").modal(\"show\")'/></a>";
+                    $content="<a href='' onclick='return false;'><img style='max-height:100px' class='img-responsive' src='".$data->img."' onclick='$(\"#img_view\").attr(\"src\",\"".$data->img."\"); $(\"#modal-img\").modal(\"show\")'/></a>";
                     return $content;
                 }
             ],

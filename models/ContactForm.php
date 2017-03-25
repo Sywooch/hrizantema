@@ -50,13 +50,33 @@ class ContactForm extends Model
     public function contact($email)
     {
         if ($this->validate()) {
-            Yii::$app->mailer->compose()
-                ->setTo($email)
-                ->setFrom([$this->email => $this->name])
-                ->setSubject($this->subject)
-                ->setTextBody($this->body)
-                ->send();
+//            Yii::$app->mailer->compose()
+//                ->setTo($email)
+//                ->setFrom([$this->email => $this->name])
+//                ->setSubject($this->subject)
+//                ->setTextBody($this->body)
+//                ->send();
 
+        $messages[] = Yii::$app->mailer->compose()
+                        ->setFrom(["hrizantema31@yandex.ru"=>$this->email." ".$this->name])//отправитель
+                        ->setTo('hrizantema31@yandex.ru')
+                        ->setSubject($this->subject)
+			->setTextBody($this->body);
+        $messages[] = Yii::$app->mailer->compose()
+                        ->setFrom(["hrizantema31@yandex.ru"=>$this->email." ".$this->name])//отправитель
+                        ->setTo('4399393@gmail.com')
+                        ->setSubject($this->subject)
+			->setTextBody($this->body);                        
+        $messages[] = Yii::$app->mailer->compose()
+                        ->setFrom(["hrizantema31@yandex.ru"=>$this->email." ".$this->name])//отправитель
+                        ->setTo('ludmila.31rus@yandex.ru')
+                        ->setSubject($this->subject)
+			->setTextBody($this->body); 
+        
+      
+        Yii::$app->mailer->sendMultiple($messages);
+            
+            
             return true;
         }
         return false;

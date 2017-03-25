@@ -22,7 +22,7 @@ $this->title = "Вход на сайт";
         ],
     ]); ?>
 
-        <?= $form->field($model, 'name')->textInput(['autofocus' => true])->label('Логин')?>
+        <?= $form->field($model, 'name')->textInput()->label('Логин')?>
 
         <?= $form->field($model, 'password')->passwordInput()->label('Пароль') ?>
 

@@ -4,13 +4,28 @@ Yii::setAlias('@tests', dirname(__DIR__) . '/tests/codeception');
 
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
+$pass = require(__DIR__ . '/pass.php');
 
 $config = [
     'id' => 'basic-console',
+    'bootstrap' => ['log', 'podium'],
+    'modules' => [
+        'podium' => 'bizley\podium\Podium',
+    ],
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
     'components' => [
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'ssl://smtp.yandex.ru',
+                'username' => 'hrizantema31@yandex.ru',
+                'port' => '465',
+                //'encryption' => 'SSL'
+            ],
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -41,5 +56,5 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
     ];
 }
-
+$config['components']['mailer']['transport'] = $config['components']['mailer']['transport']+$pass;
 return $config;

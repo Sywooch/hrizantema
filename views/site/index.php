@@ -54,7 +54,7 @@ $blockNews = News::find()->where(['type'=>'1'])->orderBy('date_news DESC')->limi
 $news = "";
 foreach ($blockNews as $new) {
    $news = $news."<div class='news-block'>";
-   $news = $news.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/news','id'=>$new->id]);
+   $news = $news.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img style='max-height:120px' class='img-responsive' src='".$new->img."'/></div>",['site/news','id'=>$new->id]);
    $news = $news."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
    $news = $news.Html::a($new->title,['site/news','id'=>$new->id],['class'=>'news-title']);
    $news = $news."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
@@ -68,7 +68,7 @@ $blockNews2 = News::find()->where(['type'=>'2'])->orderBy('date_news DESC')->lim
 $news2 = "";
 foreach ($blockNews2 as $new) {
    $news2 = $news2."<div class='news-block'>";
-   $news2 = $news2.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/stocks','id'=>$new->id]);
+   $news2 = $news2.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img style='max-height:120px' class='img-responsive' src='".$new->img."'/></div>",['site/stocks','id'=>$new->id]);
    $news2 = $news2."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
    $news2 = $news2.Html::a($new->title,['site/stocks','id'=>$new->id],['class'=>'news-title']);
    $news2 = $news2."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
@@ -82,7 +82,7 @@ $blockNews3 = News::find()->where(['type'=>'5'])->orderBy('date_news DESC')->lim
 $news3 = "";
 foreach ($blockNews3 as $new) {
    $news3 = $news3."<div class='news-block'>";
-   $news3 = $news3.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/latest','id'=>$new->id]);
+   $news3 = $news3.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img style='max-height:120px' class='img-responsive' src='".$new->img."'/></div>",['site/latest','id'=>$new->id]);
    $news3 = $news3."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
    $news3 = $news3.Html::a($new->title,['site/latest','id'=>$new->id],['class'=>'news-title']);
    $news3 = $news3."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
@@ -97,7 +97,7 @@ $blockNews4 = News::find()->where(['type'=>'6'])->orderBy('date_news DESC')->lim
 $news4 = "";
 foreach ($blockNews4 as $new) {
    $news4 = $news4."<div class='news-block'>";
-   $news4 = $news4.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img class='img-responsive' src='".$new->img."'/></div>",['site/discounts','id'=>$new->id]);
+   $news4 = $news4.Html::a("<div class='news-img col-lg-4 col-md-4 col-sm-4 col-xs-4'><img style='max-height:120px' class='img-responsive' src='".$new->img."'/></div>",['site/discounts','id'=>$new->id]);
    $news4 = $news4."<div style='border-left:1px solid #eee;margin-left:170px; text-align:left'>";
    $news4 = $news4.Html::a($new->title,['site/discounts','id'=>$new->id],['class'=>'news-title']);
    $news4 = $news4."<div class='news-shorttext'>".StringHelper::truncateWords($new->short_text, 29, '...', false)."</div>";
@@ -279,11 +279,18 @@ $news4 = $news4."<div onClick=\"window.location.href='".Url::to(['site/discounts
 </div>
 
 
+<div class="visible-xs col-lg-10" style="margin-top:40px;"></div>
 
-    <div class="text-collective" style="padding-top:50px; height:100px">
+<div style='display:flex'>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-collective text-right" style="margin:auto">
 
             <b>Стороженко Елена Юрьевна</b> - преподаватель курса прикладной эстетики, дополнительных программ стилистика и искусство визажа.
     </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin:auto; min-width: 100px">
+        <img class='img-responsive img-collective' src='<?=Yii::getAlias('@web')?>/images/collective/portret8.png'/>
+    </div>
+</div>
+
     <div class="text-collective" style="padding-top:20px; height:100px">
 
             <b>Ерофтеев Вадим Анатольевич</b> - преподаватель Бизнес дисциплин, «Экономика и финансы», «Деловая эстетика», дополнительных дисциплин по программам профессионального обучения и программам дополнительного образования.
@@ -335,14 +342,14 @@ foreach ($categories as $category) {
 ?>
 </div>
 
-
+<!--
 <div class="caption_my text-left col-lg-offset-1 col-md-offset-1 col-sm-offset-2 col-xs-offset-2" style="padding-top:40px;padding-bottom:40px;">
     <div ><a class="not-hover" id="course">ОТЗЫВЫ ПРОШЕДШИХ ОБУЧЕНИЕ</a></div>
 </div> 
 <hr/>
 <div class='col-lg-offset-1 col-md-offset-1' style='display:flex'>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " style='margin:auto'>
-        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/otzivi/otziv1.png'/>
+        <img class='img-responsive rekommend' src='<?php //echo Yii::getAlias('@web')?>/images/otzivi/otziv1.png'/>
         <div class='subtext'>Ольга Фролова</div>
     </div>
     
@@ -354,7 +361,7 @@ foreach ($categories as $category) {
 <hr/>
 <div class='col-lg-offset-1 col-md-offset-1' style='display:flex'>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " style='margin:auto'>
-        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/otzivi/otziv2.png'/>
+        <img class='img-responsive rekommend' src='<?php //echo Yii::getAlias('@web')?>/images/otzivi/otziv2.png'/>
         <div class='subtext'>Борис Гребенщиков</div>
     </div>
     
@@ -366,7 +373,7 @@ foreach ($categories as $category) {
 <hr/>
 <div class='col-lg-offset-1 col-md-offset-1' style='display:flex'>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " style='margin:auto'>
-        <img class='img-responsive rekommend' src='<?=Yii::getAlias('@web')?>/images/otzivi/otziv3.png'/>
+        <img class='img-responsive rekommend' src='<?php //echo Yii::getAlias('@web')?>/images/otzivi/otziv3.png'/>
         <div class='subtext'>Алена Прекрасная</div>
     </div>
     
@@ -375,3 +382,4 @@ foreach ($categories as $category) {
     </div>
 </div>               
 <hr/>
+-->
