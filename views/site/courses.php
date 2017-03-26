@@ -16,9 +16,25 @@ use kartik\color\ColorInput;
 use yii\widgets\Pjax;
 use kartik\grid\GridView;
 use app\models\SeoPages;
+
 $seo = SeoPages::find()->where(['name'=>'courses'])->one();
 $this->title = $seo->seo_title;
 $this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
+
+if ($modelCat!==false) {
+    if ($modelCourse==false) {
+        $this->title = $modelCat->seo_title;
+        $this->registerMetaTag(["name"=>"description","content"=>$modelCat->seo_descr]);
+    } else {
+        $this->title = $modelCourse->seo_title;
+        $this->registerMetaTag(["name"=>"description","content"=>$modelCourse->seo_descr]);       
+    }
+} else {
+    $seo = SeoPages::find()->where(['name'=>'courses'])->one();
+    $this->title = $seo->seo_title;
+    $this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
+}
+
 
 $this->params['breadcrumbs'][] = 'Курсы и расписание';
 ?>

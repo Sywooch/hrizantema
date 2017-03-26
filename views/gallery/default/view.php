@@ -13,6 +13,9 @@ use onmotion\helpers\Translator;
 /* @var $model onmotion\gallery\models\Gallery */
 /* @var $photos onmotion\gallery\models\GalleryPhoto */
 
+$this->title = $model->name;
+$this->registerMetaTag(["name"=>"description","content"=>$model->descr]);
+
 set_time_limit(60);
 ini_set('memory_limit', '512M');
 

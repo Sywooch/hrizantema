@@ -3,9 +3,11 @@ use yii\bootstrap\Modal;
 use yii\helpers\Html;
 use yii\bootstrap\Collapse;
 
-$this->title = $model->title;
+$this->title = $model->seo_title;
+$this->registerMetaTag(["name"=>"description","content"=>$model->seo_descr]);
+
 $this->params['breadcrumbs'][] = ['label'=>'Новинки','url'=>['latest']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $model->title;
 
 
 
