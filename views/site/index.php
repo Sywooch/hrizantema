@@ -8,10 +8,12 @@ use app\models\News;
 use yii\bootstrap\Html;
 use yii\helpers\StringHelper;
 use app\models\Category;
-
+use app\models\SeoPages;
+$seo = SeoPages::find()->where(['name'=>'index'])->one();
+$this->title = $seo->seo_title;
+$this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
 /* @var $this yii\web\View */
 
-$this->title = 'Образовательный центр Хризантема';
 ?>
 <div class="site-index">
 <?php

@@ -7,8 +7,11 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
+use app\models\SeoPages;
+$seo = SeoPages::find()->where(['name'=>'login'])->one();
+$this->title = $seo->seo_title;
+$this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
 
-$this->title = "Вход на сайт";
 ?>
 <div class="site-login ">
     <h2><?= Html::encode($this->title) ?></h2><br/>

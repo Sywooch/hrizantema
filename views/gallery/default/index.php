@@ -2,13 +2,16 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\bootstrap\Modal;
-
+use app\models\SeoPages;
+$seo = SeoPages::find()->where(['name'=>'gallery'])->one();
+$this->title = $seo->seo_title;
+$this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
 /* @var $this yii\web\View */
 /* @var $searchModel onmotion\gallery\models\GallerySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Фотогалерея';
-$this->params['breadcrumbs'][] = $this->title;
+
+$this->params['breadcrumbs'][] = 'Фотогалерея';
 $dataProvider->pagination->pageSize = 20;
 ?>
 <div class="gallery-index">

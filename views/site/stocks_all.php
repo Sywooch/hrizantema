@@ -1,9 +1,12 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\StringHelper;
+use app\models\SeoPages;
+$seo = SeoPages::find()->where(['name'=>'stocks'])->one();
+$this->title = $seo->seo_title;
+$this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
 
-$this->title = "Акции";
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = "Акции";
 
 $news = "";
 foreach ($model as $new) {

@@ -32,6 +32,8 @@ class Category extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['name', 'img', 'description','color','seo_descr','seo_title'], 'string'],
+            [['seo_title'],'string','max'=>75],
+            [['seo_descr'],'string','max'=>200]
         ];
     }
 

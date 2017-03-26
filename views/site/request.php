@@ -14,9 +14,12 @@ use yii\helpers\ArrayHelper;
 use kartik\date\DatePicker;
 use kartik\color\ColorInput;
 use yii\widgets\Pjax;
+use app\models\SeoPages;
+$seo = SeoPages::find()->where(['name'=>'request'])->one();
+$this->title = $seo->seo_title;
+$this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
 
-$this->title = 'Заявка';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = 'Заявка';
 ?>
 
 

@@ -31,6 +31,8 @@ class SeoPages extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['name', 'seo_title', 'seo_descr', 'comment'], 'string'],
+            [['seo_title'],'string','max'=>75],
+            [['seo_descr'],'string','max'=>200]
         ];
     }
 

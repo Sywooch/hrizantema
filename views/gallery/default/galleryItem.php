@@ -9,7 +9,6 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use onmotion\helpers\Translator;
-
 $date = new DateTime($model->date);
 
 ?>

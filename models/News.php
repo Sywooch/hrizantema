@@ -33,6 +33,8 @@ class News extends \yii\db\ActiveRecord
             [['title', 'text', 'date_news','visible','user_id'], 'required'],
             [['title', 'img', 'short_text', 'text', 'seo_descr','seo_title'], 'string'],
             [['date','date_news','type'], 'safe'],
+            [['seo_title'],'string','max'=>75],
+            [['seo_descr'],'string','max'=>200]
         ];
     }
 

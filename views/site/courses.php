@@ -15,10 +15,12 @@ use kartik\date\DatePicker;
 use kartik\color\ColorInput;
 use yii\widgets\Pjax;
 use kartik\grid\GridView;
+use app\models\SeoPages;
+$seo = SeoPages::find()->where(['name'=>'courses'])->one();
+$this->title = $seo->seo_title;
+$this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
 
-
-$this->title = 'Курсы и расписание';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = 'Курсы и расписание';
 ?>
 
 

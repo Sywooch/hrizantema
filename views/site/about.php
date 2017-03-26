@@ -1,9 +1,11 @@
 <?php
-
 /* @var $this yii\web\View */
-
 use yii\helpers\Html;
 
+use app\models\SeoPages;
+$seo = SeoPages::find()->where(['name'=>'about'])->one();
+$this->title = $seo->seo_title;
+$this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
 
 ?>
 <div class="site-about">

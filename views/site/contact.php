@@ -10,9 +10,11 @@ use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 use yii\bootstrap\Tabs;
 use kartik\tabs\TabsX;
+use app\models\SeoPages;
+$seo = SeoPages::find()->where(['name'=>'contact'])->one();
+$this->title = $seo->seo_title;
+$this->registerMetaTag(["name"=>"description","content"=>$seo->seo_descr]);
 
-
-$this->title = "Контакты";
 ?>
 
     

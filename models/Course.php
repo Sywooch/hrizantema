@@ -32,6 +32,8 @@ class Course extends \yii\db\ActiveRecord
         return [
             [['name','id_cat'], 'required'],
             [['name', 'img', 'description','duration','price','id_cat','seo_title','seo_descr','duration_text'], 'string'],
+            [['seo_title'],'string','max'=>75],
+            [['seo_descr'],'string','max'=>200]
         ];
     }
 
