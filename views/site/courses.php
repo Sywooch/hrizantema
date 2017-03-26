@@ -151,7 +151,20 @@ if ($modelCat!==false) {
                 'contentOptions'=>['class'=>'change','style'=>'cursor:pointer'],
                 'label' => 'Наименование курса',
             ],
+            [   
+                'attribute' => 'duration_text',
+                'format' => 'raw',
+                'contentOptions'=>['class'=>'text-center'],
+                'label' => '',
+                'value' => function($data){
+                    if (empty($data->duration_text)){
+                        return "";
+                    } else {
+                        return $data->duration_text;
+                    }
 
+                }
+            ],
 
             [   
                 'attribute' => 'duration',

@@ -39,7 +39,14 @@ use app\models\Category;
     
     <?= $form->field($model, 'duration')->textInput()?>  
     
+    <?= $form->field($model, 'duration_descr')->textInput()?>     
+    
     <?= $form->field($model, 'price')->textInput()?> 
+    
+    <?= $form->field($model, 'seo_title')->textInput()?> 
+    
+    <?= $form->field($model, 'seo_descr')->textarea()?>     
+    
     <div class="form-group text-center">
         <?= Html::submitButton('Создать курс',['class' => 'btn btn-success']) ?>
     </div>

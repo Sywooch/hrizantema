@@ -128,9 +128,13 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                
-                //'<action>' => 'site/<action>',
                 'login/<service:google_oauth|facebook|yandex_oauth|vkontakte|odnoklassniki|mailru>' => 'site/login',
+                'gallery/<id:\d+>' => 'gallery/default/view',
+                'gallery' => 'gallery',
+                'forum' => 'forum',
+                '<action>/<id:\d+>/<course:\d+>' => 'site/<action>',
+                '<action>/<id:\d+>' => 'site/<action>',
+                '<action>' => 'site/<action>',
                  '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 //'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 //'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
@@ -158,18 +162,18 @@ $config = [
     'params' => $params,
 ];
 
-//if (YII_ENV_DEV) {
-//    // configuration adjustments for 'dev' environment
-//    $config['bootstrap'][] = 'debug';
-//    $config['modules']['debug'] = [
-//        'class' => 'yii\debug\Module',
-//    ];
-//
-//    $config['bootstrap'][] = 'gii';
-//    $config['modules']['gii'] = [
-//        'class' => 'yii\gii\Module',
-//    ];
-//}
+if (YII_ENV_DEV) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+    ];
+
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+    ];
+}
 
 
 $config['components']['mailer']['transport'] = $config['components']['mailer']['transport']+$pass;

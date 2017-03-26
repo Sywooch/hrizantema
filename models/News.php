@@ -31,7 +31,7 @@ class News extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'text', 'date_news','visible','user_id'], 'required'],
-            [['title', 'img', 'short_text', 'text'], 'string'],
+            [['title', 'img', 'short_text', 'text', 'seo_descr','seo_title'], 'string'],
             [['date','date_news','type'], 'safe'],
         ];
     }
@@ -48,7 +48,9 @@ class News extends \yii\db\ActiveRecord
             'short_text' => 'Сокращенный текст',
             'text' => 'Текст',
             'date' => 'Дата',
-            'date_news' => 'Дата новости'
+            'date_news' => 'Дата новости',
+            'seo_title'=>'SEO-заголовок',
+            'seo_descr'=>'SEO-описание'
         ];
     }
         

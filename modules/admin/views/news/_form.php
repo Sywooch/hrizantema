@@ -47,6 +47,9 @@ use app\models\CategoryNews;
     
     <?= $form->field($model, 'visible')->hiddenInput(['value'=>1])->label(false) ?>
 
+    
+    <?= $form->field($model, 'seo_title')->textInput() ?>
+    <?= $form->field($model, 'seo_descr')->textarea() ?>    
     <div class="form-group text-center">
         <?= Html::submitButton('Создать мероприятие',['class' => 'btn btn-success']) ?>
     </div>

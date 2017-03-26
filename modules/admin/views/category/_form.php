@@ -38,6 +38,9 @@ use kartik\color\ColorInput;
     <?= $form->field($model, 'color')->widget(ColorInput::classname(), [
     'options' => ['placeholder' => 'Цвет ...'],
 ])?>   
+    
+    <?= $form->field($model, 'seo_title')->textInput() ?>
+    <?= $form->field($model, 'seo_descr')->textarea() ?>
     <div class="form-group text-center">
         <?= Html::submitButton('Создать категорию',['class' => 'btn btn-success']) ?>
     </div>

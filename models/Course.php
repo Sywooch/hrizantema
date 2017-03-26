@@ -31,7 +31,7 @@ class Course extends \yii\db\ActiveRecord
     {
         return [
             [['name','id_cat'], 'required'],
-            [['name', 'img', 'description','duration','price','id_cat'], 'string'],
+            [['name', 'img', 'description','duration','price','id_cat','seo_title','seo_descr','duration_text'], 'string'],
         ];
     }
 
@@ -47,7 +47,10 @@ class Course extends \yii\db\ActiveRecord
             'description' => 'Описание',
             'id_cat'=>'Категория',
             'duration'=>'Длительность, ч',
-            'price'=>'Цена, р'
+            'duration_descr' => 'Длительность текст',
+            'price'=>'Цена, р',
+            'seo_title'=>'SEO-заголовок',
+            'seo_descr'=>'SEO-описание',
         ];
     }
         

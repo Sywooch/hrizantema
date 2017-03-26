@@ -73,7 +73,17 @@ $attributes = [
         'value'=>'<span style=\'display:block;width:15px;height:15px;background:'.$model->color.'\'></span>'
         
     ],
-    
+    [
+        'attribute'=>'seo_title', 
+        'label'=>'SEO-заголовок',
+        'format'=>'raw',
+    ],
+    [
+        'attribute'=>'seo_descr', 
+        'label'=>'SEO-описание',
+        'type'=>'textarea',
+        'format'=>'raw'
+    ],
     ];
     $edit = \Yii::$app->request->get('edit');
     echo DetailView::widget([

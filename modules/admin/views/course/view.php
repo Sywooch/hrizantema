@@ -75,8 +75,13 @@ $attributes = [
         
     ],
     [
-        'attribute'=>'duration', 
+        'attribute'=>'duration_text', 
         'label'=>'Длительность',
+        'format'=>'raw',
+    ],
+    [
+        'attribute'=>'duration_text', 
+        'label'=>'Длительность текст',
         'format'=>'raw',
     ],
     [
@@ -84,7 +89,17 @@ $attributes = [
         'label'=>'Цена',
         'format'=>'raw',
     ],
-
+    [
+        'attribute'=>'seo_title', 
+        'label'=>'SEO-заголовок',
+        'format'=>'raw',
+    ],
+    [
+        'attribute'=>'seo_descr', 
+        'label'=>'SEO-описание',
+        'type'=>'textarea',
+        'format'=>'raw'
+    ],
     ];
     $edit = \Yii::$app->request->get('edit');
     echo DetailView::widget([
